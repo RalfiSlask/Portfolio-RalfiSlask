@@ -34,9 +34,9 @@ MongoClient.connect(process.env.DB_URL)
 
 app.post('/exchange_token', async (req, res) => {
   const { code } = req.body;
-  const client_id = 'a628d6843b964ec3a71f2d06d3b71581';
-  const client_secret = 'ac6756bb52a6498286ebdd7db0165a33';
-  const redirect_uri = 'http://localhost:5173/';
+  const client_id = process.env.CLIENT_ID;
+  const client_secret = process.env.CLIENT_SECRET;
+  const redirect_uri = process.env.CLIENT_URL;
 
   const response = await fetch('https://accounts.spotify.com/api/token', {
     method: 'POST',
@@ -68,6 +68,7 @@ const transporter = nodemailer.createTransport({
 
 app.post('/api/sendmail', (req, res) => {
   const { name, email, message } = req.body;
+  console.log(req.body);
   const mailOptions = {
     from: email,
     to: process.env.EMAIL_USER,
