@@ -36,7 +36,7 @@ app.post('/exchange_token', async (req, res) => {
   const { code } = req.body;
   const client_id = 'a628d6843b964ec3a71f2d06d3b71581';
   const client_secret = 'ac6756bb52a6498286ebdd7db0165a33';
-  const redirect_uri = 'https://server-2tab5.ondigitalocean.app';
+  const redirect_uri = 'https://server-2tab5.ondigitalocean.app/';
 
   const response = await fetch('https://accounts.spotify.com/api/token', {
     method: 'POST',
