@@ -54,7 +54,7 @@ const TechnicalSkills = () => {
       initial="offscreen"
       whileInView={'onscreen'}
       viewport={{ margin: '-450px', once: true }}
-      className="flex justify-center relative items-center h-full max-h-[500px] sm:max-w-[500px] md:max-w-[700px] w-full sm:col-span-4 xl:col-span-7"
+      className="flex justify-center relative items-center h-[700px] md:h-[650px] max-h-[500px] sm:max-w-[500px] md:max-w-[700px] w-full sm:col-span-4 xl:col-span-7"
       transition={{ duration: 0.6 }}
     >
       <motion.div variants={TechnicalSkillsVariant} className="w-full h-full">
@@ -90,13 +90,13 @@ const TechnicalSkills = () => {
 
           <button
             onClick={decreaseCount}
-            className="skills-icon-left absolute left-12 cursor-pointer rounded-full p-2 shadow-shadow-icon hover:shadow-shadow-input transition-shadow duration-300 "
+            className="skills-icon-left absolute left-12 top-4 cursor-pointer rounded-full p-2 shadow-shadow-icon hover:shadow-shadow-input transition-shadow duration-300 "
           >
             <img src={PrevArrow} alt="left arrow" height="25" width="25" />
           </button>
           <button
             onClick={increaseCount}
-            className="skills-icon-right absolute right-12 cursor-pointer rounded-full p-2 shadow-shadow-icon hover:shadow-shadow-input transition-shadow duration-300 "
+            className="skills-icon-right absolute right-12 top-4 cursor-pointer rounded-full p-2 shadow-shadow-icon hover:shadow-shadow-input transition-shadow duration-300 "
           >
             <img src={NextArrow} alt="right arrow" height="25" width="25" />
           </button>
