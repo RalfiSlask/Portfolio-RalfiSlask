@@ -31,7 +31,7 @@ function App() {
         <a
           href="#about"
           style={{ scrollBehavior: 'smooth' }}
-          className="rounded-full hover:bg-secondaryBG w-[45px] cursor-pointer h-[45px] transition-all duration-300 ease absolute bottom-14 z-50 flex justify-center items-center"
+          className="rounded-full hover:bg-secondaryBG w-[45px] cursor-pointer h-[45px] transition-all duration-300 ease absolute bottom-14 z-40 flex justify-center items-center"
         >
           <img src={ArrowDownLogo} alt="arrow down icon" width="30" height="30" />
         </a>
