@@ -57,8 +57,8 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="flex flex-col gap-20 w-full md:max-w-[640px] xl:max-w-[1200px] relative items-center">
-      <div className="flex flex-col gap-10 w-full">
+    <div className="flex flex-col gap-20 w-full max-w-[500px] md:max-w-[640px] xl:max-w-[1200px] relative items-center">
+      <div className="flex flex-col gap-10 w-full items-center xl:items-start">
         <motion.div
           initial="offscreen"
           whileInView={'onscreen'}
@@ -92,7 +92,7 @@ const AboutPage = () => {
           transition={{ duration: 0.5 }}
         >
           <motion.div variants={chatSpotifyVariant}>
-            <div className="gap-10 grid sm:grid-cols-4 xl:grid-cols-12">
+            <div className="gap-10 grid  sm:grid-cols-4 xl:grid-cols-12">
               <Chat />
               <SpotifySection />
             </div>
