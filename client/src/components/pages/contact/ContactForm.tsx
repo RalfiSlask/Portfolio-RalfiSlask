@@ -1,14 +1,9 @@
 import ArrowLeft from '../../../assets/icons/arrowleft.svg';
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import { motion, Variants } from 'framer-motion';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-
-interface IFormInfo {
-  name: string;
-  email: string;
-  message: string;
-}
+import { nameRegex, emailRegex } from '../../../utils/regex';
+import { IFormInfo } from '../../../utils/types';
 
 const ContactForm = () => {
   const inputVariant: Variants = {
@@ -46,37 +41,71 @@ const ContactForm = () => {
   };
 
   const [isHovered, setIsHovered] = useState(false);
-  const [formInfo, setFormInfo] = useState<IFormInfo>({ name: '', email: '', message: '' });
+  const [formInfo, setFormInfo] = useState<IFormInfo>({
+    name: '',
+    email: '',
+    message: '',
+  });
   const [messageSuccessfull, setMessageSuccessFull] = useState('');
   const [emailNotValidText, setEmailNotValidText] = useState('');
-  const [nameMessageNotValidText, setMessageNotValidText] = useState('');
   const [nameNotValidText, setNameNotValidText] = useState('');
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [displayMessages, setDisplayMessages] = useState(false);
 
   const handleChangeOnNameInput = (e: FormEvent<HTMLInputElement>, key: keyof IFormInfo) => {
     const target = e.target as HTMLInputElement;
     setFormInfo(prev => ({ ...prev, [key]: target.value }));
+    setDisplayMessages(false);
     setMessageSuccessFull('');
     setEmailNotValidText('');
-    setMessageNotValidText('');
     setNameNotValidText('');
+    validateForm();
   };
 
   const handleChangeOnTextArea = (e: FormEvent<HTMLTextAreaElement>) => {
     const target = e.target as HTMLTextAreaElement;
     setFormInfo(prev => ({ ...prev, message: target.value }));
+    setDisplayMessages(false);
     setMessageSuccessFull('');
     setEmailNotValidText('');
-    setMessageNotValidText('');
     setNameNotValidText('');
+    validateForm();
   };
 
-  useEffect(() => {
-    console.log(formInfo);
-  }, [formInfo]);
+  const validateForm = () => {
+    const form = { ...formInfo };
+    const isNameValid = nameRegex.test(form.name);
+    const isEmailValid = emailRegex.test(form.email);
+    if (form.name.trim().length === 0) {
+      setNameNotValidText('Cant be empty');
+    } else {
+      if (!isNameValid) {
+        setNameNotValidText('Name not valid');
+      }
+    }
+    if (form.email.trim().length === 0) {
+      setEmailNotValidText('Cant be empty');
+    } else {
+      if (!isEmailValid) {
+        setEmailNotValidText('Not valid email');
+      }
+    }
+
+    if (isNameValid && isEmailValid) {
+      setIsFormValid(true);
+      console.log('true');
+    } else {
+      console.log('false');
+    }
+  };
 
   const submitForm = async (e: FormEvent) => {
-    setFormInfo({ name: '', email: '', message: '' });
     e.preventDefault();
+    validateForm();
+    setDisplayMessages(true);
+    if (!isFormValid) return;
+    setFormInfo({ name: '', email: '', message: '' });
+    setDisplayMessages(false);
     try {
       const response = await axios.post('http://localhost:3000/api/sendmail', {
         mailInfo: {
@@ -96,31 +125,43 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-10 w-[400px] sm:w-[500px] md:w-[600px]" onSubmit={submitForm}>
+    <form className="flex flex-col gap-4 w-[400px] sm:w-[500px] md:w-[600px]" onSubmit={submitForm} autoComplete="none">
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <motion.div className="card" variants={inputVariant}>
-          <input
-            onChange={e => {
-              handleChangeOnNameInput(e, 'name');
-            }}
-            className="contact-input"
-            type="text"
-            placeholder="Name"
-            value={formInfo.name}
-          />
+          <div className="flex flex-col gap-2 items-end">
+            <p className={`${displayMessages ? 'opacity-100' : 'opacity-0'} text-red-400 h-[20px]`}>
+              {nameNotValidText}
+            </p>
+            <input
+              onChange={e => {
+                handleChangeOnNameInput(e, 'name');
+              }}
+              className="contact-input"
+              type="text"
+              placeholder="Name"
+              value={formInfo.name}
+              autoComplete="none"
+            />
+          </div>
         </motion.div>
       </motion.div>
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <motion.div className="card" variants={inputVariant}>
-          <input
-            onChange={e => {
-              handleChangeOnNameInput(e, 'email');
-            }}
-            className="contact-input"
-            type="text"
-            placeholder="Email"
-            value={formInfo.email}
-          />
+          <div className="flex flex-col gap-2 items-end">
+            <p className={`${displayMessages ? 'opacity-100' : 'opacity-0'} text-red-400 h-[20px]`}>
+              {emailNotValidText}
+            </p>
+            <input
+              onChange={e => {
+                handleChangeOnNameInput(e, 'email');
+              }}
+              className="contact-input"
+              type="text"
+              placeholder="Email"
+              value={formInfo.email}
+              autoComplete="none"
+            />
+          </div>
         </motion.div>
       </motion.div>
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
@@ -129,7 +170,7 @@ const ContactForm = () => {
             onChange={e => {
               handleChangeOnTextArea(e);
             }}
-            className="shadow-shadow-input rounded-[12px] w-full h-[260px] outline-none p-6 bg-secondaryBG"
+            className="shadow-shadow-input rounded-[12px] w-full h-[260px] mt-8 outline-none p-6 bg-secondaryBG"
             name=""
             id=""
             cols={30}
