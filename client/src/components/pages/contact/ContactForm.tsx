@@ -107,7 +107,7 @@ const ContactForm = () => {
     setFormInfo({ name: '', email: '', message: '' });
     setDisplayMessages(false);
     try {
-      const response = await axios.post(`${import.meta.env.REDIRECT_URL}/api/sendmail`, {
+      const response = await axios.post(`https://server-2tab5.ondigitalocean.app/api/sendmail`, {
         mailInfo: {
           name: formInfo.name,
           email: formInfo.email,

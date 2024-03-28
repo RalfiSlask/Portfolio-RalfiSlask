@@ -28,7 +28,7 @@ const Chat = () => {
   const sendChatMessageToServer = async () => {
     try {
       setTyping(true);
-      const response = await fetch(`${import.meta.env.REDIRECT_URL}/chat/send`, {
+      const response = await fetch(`https://server-2tab5.ondigitalocean.app/chat/send`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

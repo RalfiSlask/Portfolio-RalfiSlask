@@ -21,7 +21,7 @@ const SpotifySection = () => {
 
   const exchangeCodeForToken = async (code: string) => {
     try {
-      const response = await axios.post(`${import.meta.env.REDIRECT_URL}/exchange_token`, {
+      const response = await axios.post(`https://server-2tab5.ondigitalocean.app/exchange_token`, {
         code,
       });
 
