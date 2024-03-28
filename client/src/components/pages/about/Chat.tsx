@@ -77,7 +77,7 @@ const Chat = () => {
 
   return (
     <>
-      <div className="bg-primaryBG flex sm:col-span-4 xl:col-span-7 w-full gap-8 justify-end shadow-shadow-medium p-6 min-h-[500px] rounded-[25px] h-full">
+      <div className=" flex-col items-center md:items-start flex md:flex-row sm:col-span-4 xl:col-span-7 w-full gap-8 justify-end shadow-shadow-medium p-6 min-h-[500px] rounded-[25px] h-full">
         <div className="w-[230px] h-full flex flex-col justify-between items-center">
           <p>
             Feel free to chat with my <span className="text-blueColor">clone </span>to the right here. I am here to
@@ -87,7 +87,7 @@ const Chat = () => {
           </p>
           <img src={MatteLogo} width="180" height="290" alt="Matthias" className="object-cover" loading="lazy" />
         </div>
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col gap-10 md:gap-0 md:justify-between h-full">
           <div className="h-[375px] w-[360px] shadow-shadow-input rounded-[10px] p-4 overflow-auto bg-secondaryBG">
             {typing ? (
               <div className="typing-indicator">
