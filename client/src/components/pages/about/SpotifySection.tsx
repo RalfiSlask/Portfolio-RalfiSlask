@@ -26,7 +26,6 @@ const SpotifySection = () => {
       });
 
       const data = response.data;
-      console.log(data);
 
       if (data.access_token) {
         spotifyApi.setAccessToken(data.access_token);
