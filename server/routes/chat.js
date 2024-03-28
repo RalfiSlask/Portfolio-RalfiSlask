@@ -4,7 +4,7 @@ const OpenAI = require('openai');
 require('dotenv').config();
 
 const openai = new OpenAI({
-  apiKey: process.env['AI_API_KEY'],
+  apiKey: process.env.AI_API_KEY,
 });
 
 /* GET users listing. */
