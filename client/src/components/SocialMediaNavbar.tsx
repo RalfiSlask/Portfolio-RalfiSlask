@@ -14,7 +14,7 @@ const SocialMediaNavbar = () => {
     <nav
       className={`${
         isVisible ? 'sm:left-10 md:left-[30px]' : 'sm:left-40 md:left-[-100px]'
-      } left-10 w-[80px] h-[20px] sm:w-[100px] sm:h-[30px] md:w-[50px] md:h-[160px] transition-left duration-700 z-50 fixed sm:bottom-10 md:bottom-16 shadow-shadow-oval bg-primaryBG rounded-md flex flex-row sm:flex-row md:flex-col items-center justify-center gap-4`}
+      }  w-[50px] h-[160px] bg-primaryBG transition-left duration-700 z-50 fixed left-10 bottom-16 shadow-shadow-oval rounded-md flex flex-col items-center justify-center gap-4`}
     >
       <div className="hover:scale-[115%] transition-scale duration-300">
         <a href="https://www.linkedin.com/in/matthias-nilsson-68023b294/" target="_blank">
