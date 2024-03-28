@@ -21,9 +21,7 @@ router.post('/send', async (req, res) => {
       return res.status(400).json({ error: 'no message' });
     }
 
-    const botData = await db
-      .collection('MatteBot')
-      .findOne({ name: 'MatteBot' });
+    const botData = await db.collection('AiBot').findOne({ name: 'MatteBot' });
 
     if (!botData) {
       return res.status(404).json({ error: 'doctor not found' });
