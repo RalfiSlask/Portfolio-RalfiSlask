@@ -36,7 +36,7 @@ app.post('/exchange_token', async (req, res) => {
   const { code } = req.body;
   const client_id = process.env.CLIENT_ID;
   const client_secret = process.env.CLIENT_SECRET;
-  const redirect_uri = 'https://ralfislask-portfolio-i3rvj.ondigitalocean.app/';
+  const redirect_uri = process.env.REDIRECT_URL;
   console.log(redirect_uri, req.body);
 
   const response = await fetch('https://accounts.spotify.com/api/token', {
