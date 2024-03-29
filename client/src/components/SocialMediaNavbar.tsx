@@ -16,19 +16,19 @@ const SocialMediaNavbar = () => {
         isVisible ? 'sm:left-10 md:left-[30px]' : 'sm:left-40 md:left-[-100px]'
       }  w-[50px] h-[160px] bg-primaryBG transition-left duration-700 z-50 fixed left-10 bottom-16 shadow-shadow-oval rounded-md flex flex-col items-center justify-center gap-4`}
     >
-      <div className="hover:scale-[115%] transition-scale duration-300">
+      <div className="social-media">
         <a href="https://www.linkedin.com/in/matthias-nilsson-68023b294/" target="_blank">
           <img src={linkedinLogo} alt="linkedin" width="25" height="25" />
         </a>
       </div>
 
-      <div className="hover:scale-[115%] transition-scale duration-300 w-[28px] h-[28px]">
+      <div className="social-media w-[28px] h-[28px]">
         <a href="https://github.com/RalfiSlask" target="_blank">
           <img src={githubLogo} alt="github" width="28" height="28" />
         </a>
       </div>
 
-      <div className="hover:scale-[115%] transition-scale duration-300">
+      <div className="social-media">
         <a href="https://www.frontendmentor.io/profile/RalfiSlask" target="_blank">
           <img src={frontendmentorLogo} alt="frontendmentor" width="25" height="25" />
         </a>
