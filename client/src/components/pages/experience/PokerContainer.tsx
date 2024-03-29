@@ -1,4 +1,4 @@
-import PokerImg from '../../../assets/images/poker.png';
+import PokerImg from '../../../assets/images/poker3.png';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import TypeOfWork from './ui/TypeOfWork';
@@ -14,24 +14,17 @@ const PokerContainer = () => {
         ref={ref}
         className={`${
           inView ? 'opacity-100 blur-0 ' : 'opacity-0 blur-[5px]'
-        } date gray-shiny left-[5%] sm:left-[10%] md:left-[15%] xl:left-[20%] top-[300px] gray-shiny`}
+        } work md:left-[20%] xl:left-[75%] top-[300px] h-full`}
       >
-        2012 - 2022
-      </div>
-
-      <div
-        className={`${
-          inView ? 'opacity-100 blur-0 ' : 'opacity-0 blur-[5px]'
-        } work right-[-10%] sm:right-[-15%] md:right-[-10%] xl:right-[-5%] 2xl:right-[-5%] top-[235px]`}
-      >
-        <div className="sm:w-[200px] md:w-[400px] h-[100px] flex justify-center">
+        <div className="date">2012 - 2022</div>
+        <div className="px-4 flex justify-center overflow-hidden">
           <img
             src={PokerImg}
-            alt="mediainstitutet"
+            alt="professional poker player"
             width="400"
             height="100"
             loading="lazy"
-            className="bg-white w-[300px] object-cover rounded-lg shadow-shadow-white-icon-hover"
+            className="bg-white w-full object-cover rounded-lg shadow-shadow-white-icon-hover"
           />
         </div>
         <TypeOfWork work="Professional Poker Player" />

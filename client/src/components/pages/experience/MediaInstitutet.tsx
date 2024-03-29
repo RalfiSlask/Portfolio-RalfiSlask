@@ -10,12 +10,9 @@ const MediaInstitutet = () => {
 
   return (
     <>
-      <div
-        className={`${
-          inView ? 'opacity-100 blur-0 ' : 'opacity-0 blur-[5px]'
-        } work right-[-15%] sm:w-[150px] md:w-[350px] top-[1175px]`}
-      >
-        <div className="w-[400px] h-[85px]">
+      <div ref={ref} className={`${inView ? 'opacity-100 blur-0 ' : 'opacity-0 blur-[5px]'} work top-[1240px] h-full`}>
+        <div className="date">2023 - Present</div>
+        <div className="px-4 flex justify-center w-full overflow-hidden">
           <img
             src={MediaInstitutetImg}
             alt="mediainstitutet"
@@ -26,14 +23,6 @@ const MediaInstitutet = () => {
           />
         </div>
         <TypeOfWork work="Frontend student" />
-      </div>
-      <div
-        ref={ref}
-        className={`${
-          inView ? 'opacity-100 blur-0 ' : 'opacity-0 blur-[5px]'
-        } date left-[50%] sm:left-[40%] md:left-[30%] xl:left-[30%] 2xl:left-[35%] top-[1240px]`}
-      >
-        2023 - Present
       </div>
     </>
   );
