@@ -184,9 +184,7 @@ body,
 }
 
 .atropos {
-  min-width: 450px;
-  max-width: 450px;
-  border-radius: 25px;
+  @apply max-w-[350px] sm:max-w-[500px] rounded-[250px];
 }
 
 .social-media {
