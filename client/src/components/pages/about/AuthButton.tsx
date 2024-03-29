@@ -2,8 +2,8 @@
 import React from 'react';
 import SpotifyIcon from '../../../assets/icons/spotify.svg';
 
-const client_id = import.meta.env.CLIENT_ID;
-const redirect_uri = encodeURIComponent(import.meta.env.REDIRECT_URL);
+const client_id = process.env.CLIENT_ID;
+const redirect_uri = encodeURIComponent('https://ralfislask-portfolio-i3rvj.ondigitalocean.app/');
 const scope = encodeURIComponent('streaming user-read-email user-read-private');
 const spotifyAuthUrl = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=${redirect_uri}&scope=${scope}`;
 
