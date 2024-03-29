@@ -14,19 +14,19 @@ const SocialMediaIconsMobile = () => {
     <nav
       className={` bg-secondaryBG md:bg-primaryBG  h-[60px] fixed left-1/2 -translate-x-1/2 duration-700 z-50 flex items-center gap-4`}
     >
-      <div className="hover:scale-[115%] transition-scale duration-300">
+      <div className="social-media">
         <a href="https://www.linkedin.com/in/matthias-nilsson-68023b294/" target="_blank">
           <img src={linkedinLogo} alt="linkedin" width="25" height="25" />
         </a>
       </div>
 
-      <div className="hover:scale-[115%] transition-scale duration-300 w-[28px] h-[28px]">
+      <div className="social-media w-[28px] h-[28px]">
         <a href="https://github.com/RalfiSlask" target="_blank">
           <img src={githubLogo} alt="github" width="28" height="28" />
         </a>
       </div>
 
-      <div className="hover:scale-[115%] transition-scale duration-300">
+      <div className="social-media">
         <a href="https://www.frontendmentor.io/profile/RalfiSlask" target="_blank">
           <img src={frontendmentorLogo} alt="frontendmentor" width="25" height="25" />
         </a>
