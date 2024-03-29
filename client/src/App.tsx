@@ -1,7 +1,8 @@
 import Header from './components/Header';
 import LandingIntro from './components/pages/landing/LandingIntro';
 import AboutPage from './components/pages/about/AboutPage';
-import SocialMediaNavbar from './components/SocialMediaNavbar';
+import Copyright from './components/pages/contact/ui/Copyright';
+import BuiltWith from './components/pages/contact/ui/BuiltWith';
 import Projects from './components/pages/projects/Projects';
 import ArrowDownLogo from './assets/arrowdown.svg';
 import ContactPage from './components/pages/contact/ContactPage';
@@ -18,9 +19,12 @@ function App() {
     <>
       <SEO />
       <Header />
-      <SocialMediaNavbar />
+
       <main className="w-full h-full grid-4812 ">
-        <section className="pt-40 grid-4812 px-6 min-h-screen w-screen gap-20 relative place-items-center" id="landing">
+        <section
+          className="pt-40 grid-4812 pb-40 px-6 min-h-screen w-screen gap-20 relative place-items-center"
+          id="landing"
+        >
           <div className="rounded-[25px] col-span-4 md:col-start-2 md:col-end-8 mx:max-w-[500px] place-items-center xl:justify-between xl:col-span-12 grid-4812 w-full shadow-shadow-medium gap-4 z-30 xl:max-w-[1200px] ">
             <LandingIntro />
             <LottieAnimation />
@@ -37,7 +41,10 @@ function App() {
           </a>
         </section>
 
-        <section className="grid-fill-4812 grid-4812 px-6 w-screen pt-40 pb-80 relative" id="about">
+        <section
+          className="grid-fill-4812 grid-4812 px-6 w-screen pt-10 md:pt-20 xl:pt-40 pb-40 md:pb-60 xl:pb-80 relative"
+          id="about"
+        >
           <AboutPage />
         </section>
 
@@ -46,20 +53,22 @@ function App() {
           <Experience />
         </section>
 
-        <section className="grid-fill-4812 px-6 flex w-screen justify-center pt-40 pb-60 bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
+        <section className="grid-fill-4812 px-6 flex w-screen justify-center pt-10 md:pt-20 xl:pt-40 pb-40  xl:pb-60 bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
           <SkillsPage />
         </section>
         <section
-          className="px-6 grid-fill-4812 flex justify-center w-screen pt-40 pb-60 border-t border-solid border-opacity-10 border-blueColor"
+          className="px-6 grid-fill-4812 flex justify-center w-screen pt-10 md:pt-20 xl:pt-40 pb-40 xl:pb-60 border-t border-solid border-opacity-10 border-blueColor"
           id="projects"
         >
           <Projects />
         </section>
         <section
-          className="px-6 grid-fill-4812 flex justify-center w-screen border-t border-solid py-10 sm:py-10 md:py-20 border-opacity-10 border-blueColor"
+          className="px-10 grid-4812 grid-fill-4812 place-items-center relative w-screen border-t border-solid pb-40 pt-20 sm:pb-40 md:pb-60 xl:pt-20 xl:pb-60 border-opacity-10 border-blueColor"
           id="contact"
         >
           <ContactPage />
+          <Copyright />
+          <BuiltWith />
         </section>
       </main>
     </>

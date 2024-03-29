@@ -87,7 +87,7 @@ const Chat = () => {
           </p>
           <img src={MatteLogo} width="180" height="290" alt="Matthias" className="object-cover" loading="lazy" />
         </div>
-        <div className="flex flex-col gap-10 md:justify-between w-full h-full">
+        <div className="flex flex-col gap-10 md:justify-between w-full h-full xl:max-w-[375px] ">
           <div className="h-[375px] w-full shadow-shadow-input rounded-[10px] p-4 overflow-auto bg-secondaryBG">
             {typing ? (
               <div className="typing-indicator">
