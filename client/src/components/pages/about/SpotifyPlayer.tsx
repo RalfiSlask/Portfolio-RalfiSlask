@@ -9,7 +9,7 @@ const SpotifyPlayer = () => {
       frameBorder="0"
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
-      className="md:w-full xl:w-[400px] h-full bg-blue rounded-2xl shadow-shadow-medium"
+      className="w-full h-full bg-blue rounded-2xl shadow-shadow-medium"
     />
   );
 };
