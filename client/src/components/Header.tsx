@@ -41,56 +41,58 @@ const Header = () => {
 
   return (
     <>
-      <div
-        className={`${
-          isPanelOpen ? 'translate-y-0 transition-all opacity-1' : 'opacity-0 translate-y-100'
-        } fixed bg-secondaryBG top-[90px] z-50 w-screen h-[300px] shadow-shadow-medium`}
-      >
-        <nav className="w-full h-[90px h-full pt-10 px-6">
-          <ul className={`flex gap-5 text-[1.25rem] flex-col items-center header-ul w-full h-full px-4`}>
-            <li
-              onClick={handleClickOnLink}
-              style={{ transitionDelay: '400ms' }}
-              className={`${
-                isVisible ? 'top-[35px]' : 'top-[-100px]'
-              } right-[400px] transition-top duration-700 listItem `}
-            >
-              <a href="#landing" className="scroll-link">
-                Home
-              </a>
-            </li>
-            <li
-              onClick={handleClickOnLink}
-              style={{ transitionDelay: '600ms' }}
-              className={`${
-                isVisible ? 'top-[35px]' : 'top-[-100px]'
-              } right-[300px] transition-top duration-700 listItem `}
-            >
-              <a href="#about" className="scroll-link">
-                About
-              </a>
-            </li>
-            <li
-              onClick={handleClickOnLink}
-              style={{ transitionDelay: '800ms' }}
-              className={`${isVisible ? 'top-[35px]' : 'top-[-100px]'} right-[200px] transition-top duration-700  `}
-            >
-              <a href="#projects" className="scroll-link">
-                Projects
-              </a>
-            </li>
-            <li
-              onClick={handleClickOnLink}
-              style={{ transitionDelay: '1000ms' }}
-              className={`${isVisible ? 'top-[35px]' : 'top-[-100px]'} right-[100px] transition-top duration-700  `}
-            >
-              <a href="#contact" className="scroll-link">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      {isScreenSizeMobile && (
+        <div
+          className={`${
+            isPanelOpen ? 'translate-y-0' : 'translate-y-[-350px]'
+          } fixed bg-secondaryBG top-[90px] transition-all duration-500 z-50 w-screen h-[300px] shadow-shadow-medium`}
+        >
+          <nav className="w-full h-[90px h-full pt-10 px-6">
+            <ul className={`flex gap-5 text-[1.25rem] flex-col items-center header-ul w-full h-full px-4`}>
+              <li
+                onClick={handleClickOnLink}
+                style={{ transitionDelay: '400ms' }}
+                className={`${
+                  isVisible ? 'top-[35px]' : 'top-[-100px]'
+                } right-[400px] transition-top duration-700 listItem `}
+              >
+                <a href="#landing" className="scroll-link">
+                  Home
+                </a>
+              </li>
+              <li
+                onClick={handleClickOnLink}
+                style={{ transitionDelay: '600ms' }}
+                className={`${
+                  isVisible ? 'top-[35px]' : 'top-[-100px]'
+                } right-[300px] transition-top duration-700 listItem `}
+              >
+                <a href="#about" className="scroll-link">
+                  About
+                </a>
+              </li>
+              <li
+                onClick={handleClickOnLink}
+                style={{ transitionDelay: '800ms' }}
+                className={`${isVisible ? 'top-[35px]' : 'top-[-100px]'} right-[200px] transition-top duration-700  `}
+              >
+                <a href="#projects" className="scroll-link">
+                  Projects
+                </a>
+              </li>
+              <li
+                onClick={handleClickOnLink}
+                style={{ transitionDelay: '1000ms' }}
+                className={`${isVisible ? 'top-[35px]' : 'top-[-100px]'} right-[100px] transition-top duration-700  `}
+              >
+                <a href="#contact" className="scroll-link">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
       <div
         className="fixed z-40 top-0 w-screen h-[90px]"
         style={{
