@@ -21,12 +21,12 @@ const SpotifySection = () => {
 
   const exchangeCodeForToken = async (code: string) => {
     try {
-      const response = await axios.post(`https://server-2tab5.ondigitalocean.app/exchange_token`, {
+      const response = await axios.post('https://server-2tab5.ondigitalocean.app/exchange_token', {
         code,
       });
 
       const data = response.data;
-
+      console.log(data);
       if (data.access_token) {
         spotifyApi.setAccessToken(data.access_token);
         setIsAuthenticated(true);
