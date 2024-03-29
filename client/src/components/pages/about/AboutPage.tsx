@@ -57,13 +57,14 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="flex flex-col gap-20 w-full max-w-[500px] md:max-w-[640px] xl:max-w-[1200px] relative items-center">
-      <div className="flex flex-col gap-10 w-full items-center xl:items-start">
+    <div className="grid-fill-4812 px-6 flex flex-col gap-20 w-full relative items-center">
+      <div className="grid-4812 max-w-[1200px] flex flex-col gap-10 w-full items-center xl:items-start">
         <motion.div
           initial="offscreen"
           whileInView={'onscreen'}
           viewport={{ margin: '-350px', once: true }}
           transition={{ duration: 0.6 }}
+          className="col-span-4 md:col-start-2 md:col-end-8 xl:col-span-12"
         >
           <div className="flex flex-col gap-10 w-full">
             <motion.div variants={LargeTextVariant}>
@@ -73,7 +74,7 @@ const AboutPage = () => {
             </motion.div>
             <motion.div variants={MediumTextVariant}>
               <div className="flex justify-between">
-                <p className="text-[1.25rem] max-w-[800px] leading-10">
+                <p className="text-[1rem] sm:text-[1.25rem] max-w-[800px] leading-10">
                   Experience the heart of my portfolio by engaging in{' '}
                   <span className="text-blueColor">conversation</span> with my replica or by
                   <span className="text-blueColor"> connecting </span>
@@ -90,9 +91,10 @@ const AboutPage = () => {
           whileInView={'onscreen'}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="col-span-4 md:col-start-2 md:col-end-8 xl:col-span-12"
         >
           <motion.div variants={chatSpotifyVariant}>
-            <div className="gap-10 grid  sm:grid-cols-4 xl:grid-cols-12">
+            <div className="flex flex-col xl:flex-row gap-10 min-h-[500px]">
               <Chat />
               <SpotifySection />
             </div>
