@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import HamburgerIcon from '../assets/icons/hamburger.svg';
 import CloseIcon from '../assets/icons/close.svg';
 import SocialMediaIconsMobile from './SocialMediaIconsMobile';
+import SocialMediaNavbar from './SocialMediaNavbar';
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,6 +42,7 @@ const Header = () => {
 
   return (
     <>
+      {!isScreenSizeMobile && <SocialMediaNavbar />}
       {isScreenSizeMobile && (
         <div
           className={`${
@@ -109,26 +111,28 @@ const Header = () => {
         </div>
         {isScreenSizeMobile && <SocialMediaIconsMobile />}
         {isScreenSizeMobile && (
-          <div className="fixed right-[15px] cursor-pointer w-[40px] h-[40px] flex justify-center items-center">
-            {isPanelOpen ? (
-              <img
-                src={CloseIcon}
-                onClick={togglePanelOpen}
-                alt="close icon"
-                width="30"
-                height="30"
-                className="object-cover w-full transition-all duration-300 ease"
-              />
-            ) : (
-              <img
-                src={HamburgerIcon}
-                onClick={togglePanelOpen}
-                alt="hamburger icon"
-                width="30"
-                height="30"
-                className="object-cover w-full transition-all duration-300 ease"
-              />
-            )}
+          <div className="fixed right-[15px] w-[100px] h-[100px] flex justify-center items-center">
+            <div className="cursor-pointer w-[40px] h-[40px] flex justify-center items-center">
+              {isPanelOpen ? (
+                <img
+                  src={CloseIcon}
+                  onClick={togglePanelOpen}
+                  alt="close icon"
+                  width="30"
+                  height="30"
+                  className="object-cover w-full transition-all duration-300 ease"
+                />
+              ) : (
+                <img
+                  src={HamburgerIcon}
+                  onClick={togglePanelOpen}
+                  alt="hamburger icon"
+                  width="30"
+                  height="30"
+                  className="object-cover w-full transition-all duration-300 ease"
+                />
+              )}
+            </div>
           </div>
         )}
 
