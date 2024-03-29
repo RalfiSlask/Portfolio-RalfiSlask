@@ -1,24 +1,15 @@
-import BuiltWith from './ui/BuiltWith';
 import ContactForm from './ContactForm';
-import Copyright from './ui/Copyright';
 import ContactIntro from './ui/ContactIntro';
 
 const ContactPage = () => {
   return (
     <>
-      <div className="relative w-full flex h-full flex-col gap-40 items-center">
-        <div className="max-w-[1200px] w-full flex-col gap-40 items-center">
-          <div className="flex flex-col gap-10 items-center sm:items-center xl:items-start">
-            <ContactIntro />
-
-            <div>
-              <ContactForm />
-            </div>
+      <div className="grid-4812 grid-fill-4812 w-full  place-items-center">
+        <div className="flex flex-col max-w-[400px] sm:max-w-[500px] md:max-w-[600px] xl:max-w-[800px] col-span-4 md:col-span-8 xl:col-span-12 w-full gap-10 place-items-center xl:place-items-start">
+          <ContactIntro />
+          <div className="w-full">
+            <ContactForm />
           </div>
-          <BuiltWith />
-        </div>
-        <div className="flex flex-col gap-40">
-          <Copyright />
         </div>
       </div>
     </>

@@ -34,35 +34,36 @@ const MemoryContainer = () => {
   };
 
   return (
-    <motion.div
-      initial="offscreen"
-      whileInView={'onscreen'}
+    <a
+      href="https://ralfislask.github.io/Memory-Game/"
+      target="_blank"
       className="w-full col-span-4 md:col-start-2 md:col-end-8 xl:col-span-8"
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
     >
-      <motion.div variants={projectVariant}>
-        <div className="bg-primaryBG p-10 xl:max-h-[800px] shadow-shadow-medium w-full group rounded-[25px] cursor-pointer flex flex-col gap-6">
-          <div className="relative overflow-hidden rounded-xl w-full xl:w-[700px] xl:h-[500px]">
-            <img
-              src={MemoryImg}
-              alt="memory"
-              width="500"
-              height="500"
-              className="transition-transform duration-300 w-full h-full object-cover transform group-hover:scale-[110%]"
-            />
-          </div>
-          <ProjectInfoContainer projectInfo={projectInfo} />
-          <div className="flex justify-between items-center">
-            <SkillsButtons skills={skills} />
-            <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <GithubIcon link="https://github.com/RalfiSlask/Memory-Game" />
-              <OpenProjectIcon link="https://ralfislask.github.io/Memory-Game/" />
+      <motion.div
+        initial="offscreen"
+        whileInView={'onscreen'}
+        className="w-full col-span-4 md:col-start-2 md:col-end-8 xl:col-span-8"
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div variants={projectVariant}>
+          <div className="bg-primaryBG p-10 xl:max-h-[800px] shadow-shadow-medium w-full group rounded-[25px] cursor-pointer flex flex-col gap-6">
+            <div className="relative overflow-hidden rounded-xl w-full xl:w-[700px] xl:h-[500px]">
+              <img
+                src={MemoryImg}
+                alt="memory"
+                width="500"
+                height="500"
+                className="transition-transform duration-300 w-full h-full object-cover transform group-hover:scale-[110%]"
+              />
             </div>
+            <ProjectInfoContainer projectInfo={projectInfo} />
+
+            <SkillsButtons skills={skills} />
           </div>
-        </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </a>
   );
 };
 
