@@ -28,7 +28,7 @@ const Chat = () => {
   const sendChatMessageToServer = async () => {
     try {
       setTyping(true);
-      const response = await fetch(`https://server-2tab5.ondigitalocean.app/chat/send`, {
+      const response = await fetch('http://localhost:3000/chat/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ const Chat = () => {
   return (
     <>
       <div className=" flex-col items-center md:items-start flex md:flex-row sm:col-span-4 xl:col-span-7 w-full gap-8 justify-end shadow-shadow-medium p-6 min-h-[500px] rounded-[25px] h-full">
-        <div className="w-[230px] h-full flex flex-col justify-between items-center">
+        <div className="w-full md:w-[230px] h-full flex flex-col justify-between items-center">
           <p>
             Feel free to chat with my <span className="text-blueColor">clone </span>to the right here. I am here to
             <span className="text-blueColor"> engage</span> in all sorts of topics and discussions. What's on your{' '}
