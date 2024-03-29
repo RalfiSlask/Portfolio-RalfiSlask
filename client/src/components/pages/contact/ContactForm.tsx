@@ -125,9 +125,9 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-4 w-[400px] sm:w-[500px] md:w-[600px]" onSubmit={submitForm} autoComplete="none">
+    <form className="flex flex-col gap-4 w-full" onSubmit={submitForm} autoComplete="none">
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-        <motion.div className="card" variants={inputVariant}>
+        <motion.div variants={inputVariant}>
           <div className="flex flex-col gap-2 items-end">
             <p className={`${displayMessages ? 'opacity-100' : 'opacity-0'} text-red-400 h-[20px]`}>
               {nameNotValidText}
@@ -145,8 +145,14 @@ const ContactForm = () => {
           </div>
         </motion.div>
       </motion.div>
-      <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-        <motion.div className="card" variants={inputVariant}>
+      <motion.div
+        initial="offscreen"
+        whileInView={'onscreen'}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="w-full"
+      >
+        <motion.div className="w-full" variants={inputVariant}>
           <div className="flex flex-col gap-2 items-end">
             <p className={`${displayMessages ? 'opacity-100' : 'opacity-0'} text-red-400 h-[20px]`}>
               {emailNotValidText}
@@ -165,7 +171,7 @@ const ContactForm = () => {
         </motion.div>
       </motion.div>
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-        <motion.div className="card" variants={inputVariant}>
+        <motion.div variants={inputVariant}>
           <textarea
             onChange={e => {
               handleChangeOnTextArea(e);
@@ -183,7 +189,7 @@ const ContactForm = () => {
       </motion.div>
 
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-        <motion.div className="card" variants={buttonVariant}>
+        <motion.div variants={buttonVariant}>
           <div className="flex justify-between items-center">
             <button
               className={`shadow-shadow-icon py-4 text-[1.25rem] h-[60px] rounded-xl text-left transition-gap duration-300 w-[300px] pl-6 relative overflow-hidden uppercase flex items-center 
