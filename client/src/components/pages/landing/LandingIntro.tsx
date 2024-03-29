@@ -3,10 +3,10 @@ import IntroHeading from './IntroHeading';
 
 const LandingIntro = () => {
   return (
-    <div className="flex flex-col p-6 gap-4 w-[450px] sm:w-[500px] md:w-[600px] xl:w-[680px] h-full  max-w-[1110px] ">
+    <div className="col-span-4 md:col-span-8 xl:col-span-7 flex flex-col p-6 gap-8 xl:gap-4 h-full w-full ">
       <div className="flex flex-col gap-8 ">
         <IntroHeading />
-        <h2 className="text-center text-[1.25rem] sm:text-[1.25rem] md:text-[2rem] xl:text-[2.5rem]">
+        <h2 className="text-center xl:text-start text-[1rem] sm:text-[1.25rem] md:text-[2rem] xl:text-[2.5rem]">
           Welcome to my digital canvas<span className="text-blueColor"> .</span>
         </h2>
       </div>
