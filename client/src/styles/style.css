@@ -189,6 +189,10 @@ body,
   border-radius: 25px;
 }
 
+.social-media {
+  @apply hover:scale-125 transition-all duration-300;
+}
+
 .chat-input {
   @apply rounded-[12px] shadow-shadow-input h-[50px] w-[300px] outline-none px-6 bg-secondaryBG;
 }
