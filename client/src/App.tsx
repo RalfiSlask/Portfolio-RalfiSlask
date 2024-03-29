@@ -20,7 +20,7 @@ function App() {
       <SEO />
       <Header />
 
-      <main className="w-full h-full grid-4812 ">
+      <main className="w-full h-full grid-4812">
         <section
           className="pt-40 grid-4812 pb-40 px-6 min-h-screen w-screen gap-20 relative place-items-center"
           id="landing"
@@ -53,7 +53,7 @@ function App() {
           <Experience />
         </section>
 
-        <section className="grid-fill-4812 px-6 flex w-screen justify-center pt-10 md:pt-20 xl:pt-40 pb-40  xl:pb-60 bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
+        <section className="grid-fill-4812 px-6 flex w-screen justify-center pt-10 md:pt-20 xl:pt-40 pb-40  xl:pb-60  bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
           <SkillsPage />
         </section>
         <section
