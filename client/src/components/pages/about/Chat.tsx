@@ -77,9 +77,9 @@ const Chat = () => {
 
   return (
     <>
-      <div className=" flex-col items-center md:items-start flex md:flex-row sm:col-span-4 xl:col-span-7 w-full gap-8 justify-end shadow-shadow-medium p-6 min-h-[500px] rounded-[25px] h-full">
-        <div className="w-full md:w-[230px] h-full flex flex-col justify-between items-center">
-          <p>
+      <div className=" flex-col items-center md:items-start flex xl:flex-row w-full gap-8 justify-end shadow-shadow-medium p-6 min-h-[500px] rounded-[25px] h-full">
+        <div className="w-full xl:w-[230px] h-full flex-col-reverse flex xl:flex-col justify-between items-center">
+          <p className="text-[1rem] md:text-[1.25rem] xl:text-[1rem]">
             Feel free to chat with my <span className="text-blueColor">clone </span>to the right here. I am here to
             <span className="text-blueColor"> engage</span> in all sorts of topics and discussions. What's on your{' '}
             <span className="text-blueColor">mind </span>
@@ -87,8 +87,8 @@ const Chat = () => {
           </p>
           <img src={MatteLogo} width="180" height="290" alt="Matthias" className="object-cover" loading="lazy" />
         </div>
-        <div className="flex flex-col gap-10 md:gap-0 md:justify-between h-full">
-          <div className="h-[375px] w-[360px] shadow-shadow-input rounded-[10px] p-4 overflow-auto bg-secondaryBG">
+        <div className="flex flex-col gap-10 md:justify-between w-full h-full">
+          <div className="h-[375px] w-full shadow-shadow-input rounded-[10px] p-4 overflow-auto bg-secondaryBG">
             {typing ? (
               <div className="typing-indicator">
                 <span className="typing-indicator-dot"></span>
