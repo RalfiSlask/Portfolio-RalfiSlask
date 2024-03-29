@@ -68,16 +68,16 @@ const Projects = () => {
 
   return (
     <div className="max-w-[1200px] w-full flex flex-col items-center gap-20 ">
-      <div className="w-full flex-col items-center xl:items-start xl:flex-row gap-20 xl:gap-0 flex justify-between">
+      <div className="w-full grid-4812 flex-col gap-20 xl:gap-0 place-items-center">
         <PageDescription title={'My Work'} />
         <motion.div
           initial="offscreen"
-          className="flex flex-col gap-8 w-[600px] xl:w-[450px] items-center xl:items-start"
+          className="flex flex-col gap-8 col-span-4 md:col-span-8 xl:col-span-6 w-full max-w-[600px] xl:w-[450px] items-center xl:items-start"
           whileInView={'onscreen'}
           viewport={{ margin: '-350px', once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex flex-col gap-2 ">
+          <div className="flex flex-col gap-2 relative">
             <motion.div variants={FadeInFromRight}>
               <h2 className="text-[1.5rem] text-center xl:text-left">Featured</h2>
             </motion.div>
