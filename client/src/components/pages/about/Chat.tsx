@@ -28,7 +28,7 @@ const Chat = () => {
   const sendChatMessageToServer = async () => {
     try {
       setTyping(true);
-      const response = await fetch('http://localhost:3000/chat/send', {
+      const response = await fetch('https://server-2tab5.ondigitalocean.app/chat/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
