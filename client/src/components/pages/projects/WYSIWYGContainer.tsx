@@ -2,6 +2,7 @@ import WYSIWYGImg from '../../../assets/images/wysiwyg.jpg';
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
+import AliveVSC from '../../../assets/images/alive.png';
 
 const WYSIWYGContainer = () => {
   const skills = ['React', 'MySQL', 'Express', 'WYSIWYG', 'Sass'];
@@ -31,7 +32,7 @@ const WYSIWYGContainer = () => {
     <a
       href="https://github.com/RalfiSlask/Fullstack-Document-Managment-API"
       target="_blank"
-      className="w-full col-span-4 md:col-start-2 md:col-span-6 xl:col-span-4"
+      className="w-full col-span-4 md:col-start-2 md:col-span-6 xl:col-span-4 relative"
     >
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <motion.div variants={projectVariant}>
@@ -51,6 +52,13 @@ const WYSIWYGContainer = () => {
           </div>
         </motion.div>
       </motion.div>
+      <img
+        src={AliveVSC}
+        alt="brain"
+        width="300"
+        loading="lazy"
+        className="absolute bottom-[-260px] left-1/2 -translate-x-1/2 opacity-50"
+      />
     </a>
   );
 };
