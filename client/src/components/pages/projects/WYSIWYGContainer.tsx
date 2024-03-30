@@ -43,6 +43,7 @@ const WYSIWYGContainer = () => {
                 width="500"
                 height="500"
                 className="transition-transform duration-300 h-full w-full object-cover transform group-hover:scale-[110%]"
+                loading="lazy"
               />
             </div>
             <ProjectInfoContainer projectInfo={projectInfo} />

@@ -44,6 +44,7 @@ const SketchitContainer = () => {
                 width="500"
                 height="500"
                 className="transition-transform h-full object-cover w-full duration-300 transform group-hover:scale-[110%]"
+                loading="lazy"
               />
             </div>
 

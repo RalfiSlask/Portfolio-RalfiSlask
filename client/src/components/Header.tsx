@@ -1,4 +1,4 @@
-import MatteLogo from '../assets/MatteLogo.png';
+import MatteLogo from '../assets/icons/MatteLogo.png';
 import { useEffect, useState } from 'react';
 import HamburgerIcon from '../assets/icons/hamburger.svg';
 import CloseIcon from '../assets/icons/close.svg';

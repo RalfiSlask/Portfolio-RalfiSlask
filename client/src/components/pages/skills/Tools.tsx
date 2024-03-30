@@ -1,6 +1,6 @@
-import FigmaLogo from '../../../assets/figma.svg';
-import GitLogo from '../../../assets/git.svg';
-import ViteLogo from '../../../assets/vite.svg';
+import FigmaLogo from '../../../assets/icons/figma.svg';
+import GitLogo from '../../../assets/icons/git.svg';
+import ViteLogo from '../../../assets/icons/vite.svg';
 import DigitalOceanLogo from '../../../assets/icons/digitalocean.png';
 
 const Tools = () => {

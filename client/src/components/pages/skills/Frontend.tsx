@@ -1,12 +1,11 @@
-import ReactLogo from '../../../assets/react.svg';
-import HtmlLogo from '../../../assets/html.png';
-import CSS3Logo from '../../../assets/css3.png';
-import JavascriptLogo from '../../../assets/javascript.svg';
-import SassLogo from '../../../assets/sass.svg';
-import VueLogo from '../../../assets/vuejs.svg';
-import TypescriptLogo from '../../../assets/typescript.svg';
-import TailwindLogo from '../../../assets/tailwind.png';
-import { Parallax } from 'react-scroll-parallax';
+import ReactLogo from '../../../assets/icons/react.svg';
+import HtmlLogo from '../../../assets/icons/html.png';
+import CSS3Logo from '../../../assets/icons/css3.png';
+import JavascriptLogo from '../../../assets/icons/javascript.svg';
+import SassLogo from '../../../assets/icons/sass.svg';
+import VueLogo from '../../../assets/icons/vuejs.svg';
+import TypescriptLogo from '../../../assets/icons/typescript.svg';
+import TailwindLogo from '../../../assets/icons/tailwind.png';
 
 const Frontend = () => {
   return (

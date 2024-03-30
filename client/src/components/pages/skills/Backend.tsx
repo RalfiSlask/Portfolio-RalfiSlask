@@ -1,7 +1,7 @@
-import MongoDBLogo from '../../../assets/mongodb.svg';
-import MySqlLogo from '../../../assets/mysql.svg';
-import NodeLogo from '../../../assets/nodejs.svg';
-import ExpressLogo from '../../../assets/express3.svg';
+import MongoDBLogo from '../../../assets/icons/mongodb.svg';
+import MySqlLogo from '../../../assets/icons/mysql.svg';
+import NodeLogo from '../../../assets/icons/nodejs.svg';
+import ExpressLogo from '../../../assets/icons/express3.svg';
 
 const Backend = () => {
   return (

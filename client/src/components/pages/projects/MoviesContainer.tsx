@@ -1,10 +1,7 @@
 import MoviesImg from '../../../assets/images/movies.jpg';
-
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
-import GithubIcon from './GithubIcon';
-import OpenProjectIcon from './OpenProjectIcon';
 
 const MoviesContainer = () => {
   const projectVariant: Variants = {
@@ -52,6 +49,7 @@ const MoviesContainer = () => {
                 width="500"
                 height="500"
                 className="transition-transform duration-300 object-cover w-full h-full transform group-hover:scale-[110%] group:hover-opacity"
+                loading="lazy"
               />
             </div>
             <ProjectInfoContainer projectInfo={projectInfo} />

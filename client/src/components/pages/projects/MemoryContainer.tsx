@@ -1,11 +1,7 @@
 import MemoryImg from '../../../assets/images/memory.jpg';
-import OpenLogo from '../../../assets/arrowopen.svg';
-import GithubLogo from '../../../assets/github.svg';
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
-import GithubIcon from './GithubIcon';
-import OpenProjectIcon from './OpenProjectIcon';
 
 const MemoryContainer = () => {
   const projectVariant: Variants = {
@@ -55,6 +51,7 @@ const MemoryContainer = () => {
                 width="500"
                 height="500"
                 className="transition-transform duration-300 w-full h-full object-cover transform group-hover:scale-[110%]"
+                loading="lazy"
               />
             </div>
             <ProjectInfoContainer projectInfo={projectInfo} />

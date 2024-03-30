@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import Frontend from './Frontend';
 import Backend from './Backend';
-import PrevArrow from '../../../assets/prev.svg';
-import NextArrow from '../../../assets/next.svg';
+import PrevArrow from '../../../assets/icons/prev.svg';
+import NextArrow from '../../../assets/icons/next.svg';
 import Tools from './Tools';
-import { Parallax } from 'react-scroll-parallax';
 import { motion, Variants } from 'framer-motion';
 
 const TechnicalSkills = () => {

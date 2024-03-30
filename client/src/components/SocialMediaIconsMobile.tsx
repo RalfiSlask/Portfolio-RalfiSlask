@@ -1,6 +1,6 @@
-import linkedinLogo from '../assets/linkedin.svg';
-import frontendmentorLogo from '../assets/frontendmentor.svg';
-import githubLogo from '../assets/github.svg';
+import linkedinLogo from '../assets/icons/linkedin.svg';
+import frontendmentorLogo from '../assets/icons/frontendmentor.svg';
+import githubLogo from '../assets/icons/github.svg';
 import { useEffect, useState } from 'react';
 
 const SocialMediaIconsMobile = () => {

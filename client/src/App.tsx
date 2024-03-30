@@ -4,7 +4,7 @@ import AboutPage from './components/pages/about/AboutPage';
 import Copyright from './components/pages/contact/ui/Copyright';
 import BuiltWith from './components/pages/contact/ui/BuiltWith';
 import Projects from './components/pages/projects/Projects';
-import ArrowDownLogo from './assets/arrowdown.svg';
+import ArrowDownLogo from './assets/icons/arrowdown.svg';
 import ContactPage from './components/pages/contact/ContactPage';
 import Background from './assets/images/bg3.jpg';
 import LineDrawing from './components/LineDrawing';

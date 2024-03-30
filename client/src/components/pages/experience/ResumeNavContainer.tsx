@@ -1,5 +1,5 @@
-import DownloadLogo from '../../../assets/downloadblack.svg';
-import OpenLogo from '../../../assets/arrowopenblack.svg';
+import DownloadLogo from '../../../assets/icons/downloadblack.svg';
+import OpenLogo from '../../../assets/icons/arrowopenblack.svg';
 import SwedenFlag from '../../../assets/icons/sweden.png';
 import EnglishFlag from '../../../assets/icons/england.png';
 

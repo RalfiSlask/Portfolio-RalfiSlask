@@ -11,7 +11,14 @@ const AudiophileContainer = () => {
       >
         <div className="bg-primaryBG w-full rounded-[25px] p-4 shadow-shadow-medium cursor-pointer flex flex-col gap-6">
           <div className="relative  rounded-xl w-full">
-            <img src={AudiophileImg} alt="memory" width="500" height="500" className="w-full object-cover" />
+            <img
+              src={AudiophileImg}
+              alt="memory"
+              width="500"
+              height="500"
+              className="w-full object-cover"
+              loading="lazy"
+            />
           </div>
         </div>
       </a>

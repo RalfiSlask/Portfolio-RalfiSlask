@@ -2,8 +2,6 @@ import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import KanbanImg from '../../../assets/images/kanban.jpg';
 import { motion, Variants } from 'framer-motion';
-import GithubIcon from './GithubIcon';
-import OpenProjectIcon from './OpenProjectIcon';
 
 const KanbanContainer = () => {
   const projectVariant: Variants = {
@@ -51,6 +49,7 @@ const KanbanContainer = () => {
                 width="500"
                 height="500"
                 className="transition-transform duration-300 h-full w-full object-cover transform group-hover:scale-[110%]"
+                loading="lazy"
               />
             </div>
             <ProjectInfoContainer projectInfo={projectInfo} />

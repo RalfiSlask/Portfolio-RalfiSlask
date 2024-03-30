@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
-import sendLogo from '../../../assets/send.svg';
-import MatteLogo from '../../../assets/Matte.png';
+import sendLogo from '../../../assets/icons/send.svg';
+import MatteLogo from '../../../assets/images/Matte.png';
 
 const Chat = () => {
   const [message, setMessage] = useState('');

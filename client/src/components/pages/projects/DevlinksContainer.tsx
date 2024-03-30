@@ -1,5 +1,4 @@
 import DevlinksImg from '../../../assets/images/devlinks.jpg';
-
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
@@ -50,6 +49,7 @@ const DevlinksContainer = () => {
                 width="500"
                 height="500"
                 className="transition-transform duration-300 min-h-[180px] h-full w-full object-cover transform group-hover:scale-[110%]"
+                loading="lazy"
               />
             </div>
             <ProjectInfoContainer projectInfo={projectInfo} />
