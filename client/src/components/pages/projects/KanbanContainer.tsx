@@ -31,7 +31,7 @@ const KanbanContainer = () => {
 
   return (
     <a
-      href="https://ralfislask.github.io/Memory-Game/"
+      href="https://ralfislask.github.io/Kanban/"
       target="_blank"
       className="w-full col-span-4 md:col-start-2 md:col-end-5 xl:col-span-4"
     >
