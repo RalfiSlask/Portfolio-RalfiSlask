@@ -48,9 +48,13 @@ const Projects = () => {
               </>
             )}
           </div>
-          <motion.div variants={FadeInFromRightLast}>
+          {isScreenSizeMobile ? (
             <AudiophileContainer />
-          </motion.div>
+          ) : (
+            <motion.div variants={FadeInFromRightLast}>
+              <AudiophileContainer />
+            </motion.div>
+          )}
         </motion.div>
       </div>
 
