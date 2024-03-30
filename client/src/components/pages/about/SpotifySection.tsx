@@ -14,10 +14,10 @@ const SpotifySection = () => {
   useEffect(() => {
     const code = new URLSearchParams(location.search).get('code');
     if (code && !attemptedExchange) {
-      setAttemptedExchange(true); // Prevent future attempts
+      setAttemptedExchange(true);
       exchangeCodeForToken(code);
     }
-  }, [location.search]); // Reacting specifically to changes in the query string
+  }, [location.search]);
 
   const exchangeCodeForToken = async (code: string) => {
     try {
