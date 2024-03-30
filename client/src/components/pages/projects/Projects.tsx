@@ -7,64 +7,17 @@ import MemoryContainer from './MemoryContainer';
 import MoviesContainer from './MoviesContainer';
 import SketchitContainer from './SketchitContainer';
 import WYSIWYGContainer from './WYSIWYGContainer';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { FadeInFromRight, FadeInFromRightDelayed, FadeInFromRightLast } from '../../../utils/motionvariants';
+import { useContext } from 'react';
+import { Context } from '../../../context/Context';
 
 const Projects = () => {
-  const FadeInFromRight: Variants = {
-    offscreen: {
-      x: 50,
-      opacity: 0,
-    },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      rotate: 0,
+  const context = useContext(Context);
 
-      transition: {
-        type: 'ease',
-        bounce: 0,
-        duration: 0.6,
-      },
-    },
-  };
+  if (!context) return;
 
-  const FadeInFromRightDelayed: Variants = {
-    offscreen: {
-      x: 50,
-      opacity: 0,
-    },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      rotate: 0,
-
-      transition: {
-        type: 'ease',
-        bounce: 0,
-        duration: 0.6,
-        delay: 0,
-      },
-    },
-  };
-
-  const FadeInFromRightLast: Variants = {
-    offscreen: {
-      x: 50,
-      opacity: 0,
-    },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      rotate: 0,
-
-      transition: {
-        type: 'ease',
-        bounce: 0,
-        duration: 0.6,
-        delay: 0.2,
-      },
-    },
-  };
+  const { isScreenSizeMobile } = context;
 
   return (
     <div className="max-w-[1200px] w-full flex flex-col items-center gap-20 ">
@@ -78,12 +31,22 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="flex flex-col gap-2 relative">
-            <motion.div variants={FadeInFromRight}>
-              <h2 className="text-[1.5rem] text-center xl:text-left">Featured</h2>
-            </motion.div>
-            <motion.div variants={FadeInFromRightDelayed}>
-              <p className="text-blueColor uppercase text-[1.25rem]">Audiophile E-commerce</p>
-            </motion.div>
+            {isScreenSizeMobile ? (
+              <>
+                {' '}
+                <h2 className="text-[1.5rem] text-center xl:text-left">Featured</h2>{' '}
+                <p className="text-blueColor uppercase text-[1.25rem]">Audiophile E-commerce</p>
+              </>
+            ) : (
+              <>
+                <motion.div variants={FadeInFromRight}>
+                  <h2 className="text-[1.5rem] text-center xl:text-left">Featured</h2>
+                </motion.div>
+                <motion.div variants={FadeInFromRightDelayed}>
+                  <p className="text-blueColor uppercase text-[1.25rem]">Audiophile E-commerce</p>
+                </motion.div>
+              </>
+            )}
           </div>
           <motion.div variants={FadeInFromRightLast}>
             <AudiophileContainer />
