@@ -1,12 +1,10 @@
 import WYSIWYGImg from '../../../assets/images/wysiwyg.jpg';
-import OpenLogo from '../../../assets/arrowopen.svg';
-import GithubLogo from '../../../assets/github.svg';
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
 
 const WYSIWYGContainer = () => {
-  const skills = ['React', 'MySQL', 'Express'];
+  const skills = ['React', 'MySQL', 'Express', 'WYSIWYG', 'Sass'];
   const projectInfo = {
     title: 'Document Managment',
     description: 'Fullstack document managment app featuring WYSIWYG Editor.',
