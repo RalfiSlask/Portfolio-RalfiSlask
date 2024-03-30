@@ -49,7 +49,7 @@ router.post('/send', async (req, res) => {
         { $set: { conversation: botData.conversation } }
       );
 
-    res.json({ message: chatAnswer, content: botData.content });
+    res.json({ message: chatAnswer, conversation: botData.conversation });
   } catch (err) {
     console.log(err, 'something went wrong');
     res.status(500).json({
