@@ -22,6 +22,24 @@ const Chat = () => {
     await sendChatMessageToServer();
   };
 
+  const resetConversation = async () => {
+    try {
+      await fetch('https://server-2tab5.ondigitalocean.app/chat/reset', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      setConversationHistory(''); // Återställ konversationshistoriken på klienten
+    } catch (err) {
+      console.error('Error resetting conversation:', err);
+    }
+  };
+
+  useEffect(() => {
+    resetConversation();
+  }, []);
+
   const sendChatMessageToServer = async () => {
     try {
       setTyping(true);
@@ -42,46 +60,26 @@ const Chat = () => {
       console.log(aiAnswer);
 
       setAnswer(aiAnswer.message);
-      setTyping(false);
+      setConversationHistory(aiAnswer.conversation.replace(`\nBot: ${aiAnswer.message}\n`, ''));
     } catch (err) {
       console.log(err, 'error');
-      setTyping(false);
     }
+    setTyping(false);
   };
 
   useEffect(() => {
-    console.log(conversationHistory);
-  }, [conversationHistory]);
+    setDisplayedAnswer('');
+  }, [answer]);
 
   useEffect(() => {
-    if (answer && !typing && answer.length > 0) {
-      setDisplayedAnswer(answer.charAt(0));
-    }
-  }, [answer, typing]);
+    if (typing || answer === displayedAnswer) return;
 
-  useEffect(() => {
-    // Append the bot's response to the conversation history if it's different from the last response
-    const lastBotResponse = conversationHistory.split('\nBot:').pop()?.trim();
-    if (answer && answer !== lastBotResponse) {
-      setConversationHistory(prev => prev + `\nBot: ${answer}\n`);
-    }
-  }, [answer, conversationHistory]);
+    const timerId = setTimeout(() => {
+      setDisplayedAnswer(prev => answer.slice(0, prev.length + 1));
+    }, 50);
 
-  useEffect(() => {
-    if (answer && displayedAnswer === answer.charAt(0)) {
-      const displayNextCharacter = () => {
-        if (index.current < answer.length) {
-          setDisplayedAnswer(prev => prev + answer.charAt(index.current));
-          index.current += 1; // Increment the current property of the ref
-          setTimeout(displayNextCharacter, 50);
-        }
-      };
-
-      const timeoutId = setTimeout(displayNextCharacter, 50); // Start the timeout
-
-      return () => clearTimeout(timeoutId); // Cleanup on unmount
-    }
-  }, [displayedAnswer, typing, answer]);
+    return () => clearTimeout(timerId);
+  }, [displayedAnswer, answer, typing]);
 
   return (
     <>
