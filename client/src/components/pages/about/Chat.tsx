@@ -99,7 +99,7 @@ const Chat = () => {
               displayedAnswer
             )}
           </div>
-          <form className="flex items-center gap-4" onSubmit={handleClickAndSendChatMessage}>
+          <form className="flex flex-col sm:flex-row items-center gap-4" onSubmit={handleClickAndSendChatMessage}>
             <input
               onChange={e => {
                 handleMessageOnChange(e);
