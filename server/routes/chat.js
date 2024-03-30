@@ -12,6 +12,18 @@ router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
 
+router.post('/reset', async (req, res) => {
+  try {
+    await db
+      .collection('AiBot')
+      .updateOne({ name: 'MatteBot' }, { $set: { conversation: '' } });
+    res.json({ success: true, message: 'Conversation reset successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ err: 'Failed to reset conversation' });
+  }
+});
+
 router.post('/send', async (req, res) => {
   const db = req.app.locals.db;
 
