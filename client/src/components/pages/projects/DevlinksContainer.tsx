@@ -1,12 +1,11 @@
 import DevlinksImg from '../../../assets/images/devlinks.jpg';
-import OpenLogo from '../../../assets/arrowopen.svg';
-import GithubLogo from '../../../assets/github.svg';
+
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
 
 const DevlinksContainer = () => {
-  const skills = ['React', 'Styled Components'];
+  const skills = ['Styled Components', 'React'];
   const projectInfo = {
     title: 'Devlinks',
     description: 'Create links from relevant platforms and share these.',
