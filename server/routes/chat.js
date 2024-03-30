@@ -16,7 +16,8 @@ router.post('/send', async (req, res) => {
   const db = req.app.locals.db;
 
   try {
-    const { message } = req.body;
+    const { message, context } = req.body;
+    console.log('context', context);
     if (!message) {
       return res.status(400).json({ error: 'no message' });
     }
@@ -24,23 +25,35 @@ router.post('/send', async (req, res) => {
     const botData = await db.collection('AiBot').findOne({ name: 'MatteBot' });
 
     if (!botData) {
-      return res.status(404).json({ error: 'doctor not found' });
+      console.log('dont exist');
+      botData = { name: 'MatteBot', role: '', conversation: '' };
+      await db.collection('AiBot').insertOne(botData);
     }
+    console.log('does exist:', botData.conversation, botData.role);
 
     const chatResponse = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [
-        { role: 'system', content: botData.content },
+        { role: 'system', content: botData.role },
         { role: 'user', content: req.body.message },
       ],
     });
 
     const chatAnswer = chatResponse.choices[0].message.content;
-    res.json({ message: chatAnswer });
+
+    botData.conversation += `\nUser: ${message}\nBot: ${chatAnswer}\n`;
+    await db
+      .collection('AiBot')
+      .updateOne(
+        { name: 'MatteBot' },
+        { $set: { conversation: botData.conversation } }
+      );
+
+    res.json({ message: chatAnswer, content: botData.content });
   } catch (err) {
     console.log(err, 'something went wrong');
     res.status(500).json({
-      err: 'something went wrong on the server, failed to generate audio',
+      err: 'something went wrong on the server, failed to generate chat',
     });
   }
 });
