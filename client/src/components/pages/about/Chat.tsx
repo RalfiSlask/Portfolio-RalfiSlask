@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 
 import sendLogo from '../../../assets/icons/send.svg';
 import MatteLogo from '../../../assets/images/Matte.png';
@@ -8,6 +8,7 @@ const Chat = () => {
   const [answer, setAnswer] = useState('');
   const [displayedAnswer, setDisplayedAnswer] = useState('');
   const [typing, setTyping] = useState(false);
+  const [conversationHistory, setConversationHistory] = useState('');
 
   const handleMessageOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const target = e.target;
@@ -33,7 +34,7 @@ const Chat = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ content: 'mumme', message: message }),
+        body: JSON.stringify({ message: message, context: conversationHistory }),
       });
 
       if (!response.ok) {
@@ -52,10 +53,22 @@ const Chat = () => {
   };
 
   useEffect(() => {
+    console.log(conversationHistory);
+  }, [conversationHistory]);
+
+  useEffect(() => {
     if (answer && !typing && answer.length > 0) {
       setDisplayedAnswer(answer.charAt(0));
     }
   }, [answer, typing]);
+
+  useEffect(() => {
+    // Append the bot's response to the conversation history if it's different from the last response
+    const lastBotResponse = conversationHistory.split('\nBot:').pop()?.trim();
+    if (answer && answer !== lastBotResponse) {
+      setConversationHistory(prev => prev + `\nBot: ${answer}\n`);
+    }
+  }, [answer, conversationHistory]);
 
   useEffect(() => {
     if (answer && displayedAnswer === answer.charAt(0)) {
@@ -89,6 +102,7 @@ const Chat = () => {
         </div>
         <div className="flex flex-col gap-10 md:justify-between w-full h-full xl:max-w-[375px] ">
           <div className="h-[375px] w-full shadow-shadow-input rounded-[10px] p-4 overflow-auto bg-secondaryBG">
+            <div>{conversationHistory}</div>
             {typing ? (
               <div className="typing-indicator">
                 <span className="typing-indicator-dot"></span>
