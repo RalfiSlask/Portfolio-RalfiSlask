@@ -34,11 +34,17 @@ const FeedbackContainer = () => {
     <a
       href="https://ralfislask.github.io/Product-Feedback-App/"
       target="_blank"
-      className="w-full col-span-4 md:col-span-3 xl:col-span-4 "
+      className="w-full col-span-4 md:col-span-3 xl:col-span-4 h-full"
     >
-      <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+      <motion.div
+        initial="offscreen"
+        whileInView={'onscreen'}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="h-full"
+      >
         <motion.div variants={projectVariant}>
-          <div className="bg-primaryBG p-10 shadow-shadow-medium max-h-[800px] md:max-h-[450px]  w-full col-span-4 group rounded-[25px] cursor-pointer flex flex-col gap-6">
+          <div className="bg-primaryBG p-10 shadow-shadow-medium max-h-[800px] md:max-h-[450px] w-full h-full col-span-4 group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl w-full min-h-[180px]">
               <img
                 src={FeedbackImg}
