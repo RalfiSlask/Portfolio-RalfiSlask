@@ -1,5 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import sendLogo from '../../../assets/icons/send.svg';
 import MatteLogo from '../../../assets/images/Matte.png';
 
@@ -9,16 +8,13 @@ const Chat = () => {
   const [displayedAnswer, setDisplayedAnswer] = useState('');
   const [typing, setTyping] = useState(false);
   const [conversationHistory, setConversationHistory] = useState('');
+  const index = useRef(1);
 
   const handleMessageOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const target = e.target;
     if (target === null) return;
     setMessage(target.value);
   };
-
-  useEffect(() => {
-    console.log(message);
-  }, [message]);
 
   const handleClickAndSendChatMessage = async (e: FormEvent) => {
     e.preventDefault();
@@ -44,6 +40,7 @@ const Chat = () => {
 
       const aiAnswer = await response.json();
       console.log(aiAnswer);
+
       setAnswer(aiAnswer.message);
       setTyping(false);
     } catch (err) {
@@ -72,21 +69,19 @@ const Chat = () => {
 
   useEffect(() => {
     if (answer && displayedAnswer === answer.charAt(0)) {
-      let index = 1;
-
       const displayNextCharacter = () => {
-        if (index < answer.length) {
-          setDisplayedAnswer(prev => prev + answer.charAt(index));
-          index++;
+        if (index.current < answer.length) {
+          setDisplayedAnswer(prev => prev + answer.charAt(index.current));
+          index.current += 1; // Increment the current property of the ref
           setTimeout(displayNextCharacter, 50);
         }
       };
 
-      if (answer.length > 1) {
-        setTimeout(displayNextCharacter, 50);
-      }
+      const timeoutId = setTimeout(displayNextCharacter, 50); // Start the timeout
+
+      return () => clearTimeout(timeoutId); // Cleanup on unmount
     }
-  }, [displayedAnswer, typing]);
+  }, [displayedAnswer, typing, answer]);
 
   return (
     <>
