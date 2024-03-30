@@ -1,4 +1,4 @@
-import React from 'react';
+import arrowUpIcon from '../../../assets/arrowopen.svg';
 
 interface IProjectInfo {
   projectInfo: {
@@ -11,6 +11,7 @@ const ProjectInfoContainer: React.FC<IProjectInfo> = ({ projectInfo }) => {
   return (
     <div className="flex flex-col gap-1">
       <h3 className="uppercase text-blueColor">{projectInfo.title}</h3>
+
       <p className="text-white">{projectInfo.description}</p>
     </div>
   );
