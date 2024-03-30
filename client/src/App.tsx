@@ -19,13 +19,12 @@ function App() {
     <>
       <SEO />
       <Header />
-
       <main className="w-full h-full grid-4812">
         <section
           className="pt-40 grid-4812 pb-40 px-6 min-h-screen w-screen gap-20 relative place-items-center"
           id="landing"
         >
-          <div className="rounded-[25px] col-span-4 md:col-start-2 md:col-end-8 mx:max-w-[500px] place-items-center xl:justify-between xl:col-span-12 grid-4812 w-full shadow-shadow-medium gap-4 z-30 xl:max-w-[1200px] ">
+          <div className="rounded-[25px] col-span-4 md:col-start-2 md:col-end-8 mx:max-w-[500px] place-items-center xl:justify-between xl:col-span-12 grid-4812 w-full shadow-shadow-medium gap-4 z-30 xl:max-w-[1200px]">
             <LandingIntro />
             <LottieAnimation />
           </div>
@@ -63,7 +62,7 @@ function App() {
           <Projects />
         </section>
         <section
-          className="px-10 grid-4812 grid-fill-4812 place-items-center relative w-screen border-t border-solid pb-40 pt-20 sm:pb-40 md:pb-60 xl:pt-20 xl:pb-60 border-opacity-10 border-blueColor"
+          className="px-10 grid-4812 grid-fill-4812 place-items-center relative w-screen border-t border-solid pb-60 pt-20 sm:pb-40 md:pb-60 xl:pt-20 xl:pb-60 border-opacity-10 border-blueColor"
           id="contact"
         >
           <ContactPage />
