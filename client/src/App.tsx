@@ -13,6 +13,8 @@ import Experience from './components/pages/experience/Experience';
 import SkillsPage from './components/pages/skills/SkillsPage';
 import SEO from './SEO';
 import LottieAnimation from './LottieAnimation';
+import BrainVSC from './assets/images/brain.png';
+import AliveVSC from './assets/images/alive.png';
 
 function App() {
   return (
@@ -52,11 +54,11 @@ function App() {
           <Experience />
         </section>
 
-        <section className="grid-fill-4812 px-6 flex w-screen justify-center pt-10 md:pt-20 xl:pt-40 pb-40  xl:pb-60  bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
+        <section className="grid-fill-4812 px-6 relative flex w-screen justify-center pt-10 md:pt-20 xl:pt-40 pb-80  xl:pb-60  bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
           <SkillsPage />
         </section>
         <section
-          className="px-6 grid-fill-4812 flex justify-center w-screen pt-10 md:pt-20 xl:pt-40 pb-40 xl:pb-60 border-t border-solid border-opacity-10 border-blueColor"
+          className="px-6 grid-fill-4812 relative flex justify-center w-screen pt-10 md:pt-20 xl:pt-40 pb-80 xl:pb-60 border-t border-solid border-opacity-10 border-blueColor"
           id="projects"
         >
           <Projects />
