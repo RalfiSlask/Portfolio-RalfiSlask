@@ -52,14 +52,14 @@ const TechnicalSkills = () => {
     <motion.div
       initial="offscreen"
       whileInView={'onscreen'}
-      viewport={{ margin: '-450px', once: true }}
-      className="flex justify-center relative items-center h-[700px] md:h-[650px] max-h-[500px] sm:max-w-[500px] md:max-w-[700px] w-full sm:col-span-4 xl:col-span-7"
+      viewport={{ margin: '-50px', once: true }}
+      className="col-span-4 md:col-span-8 xl:col-span-7 flex justify-center relative items-center h-[700px] md:h-[650px] max-h-[500px] sm:max-w-[500px] md:max-w-[700px] w-full"
       transition={{ duration: 0.6 }}
     >
       <motion.div variants={TechnicalSkillsVariant} className="w-full h-full">
-        <article className="flex justify-center relative items-center gap-10 h-full max-h-[500px] sm:max-w-[500px] md:max-w-[700px] w-full sm:col-span-4 xl:col-span-7 shadow-shadow-medium p-6 rounded-[25px]">
+        <article className="flex justify-center relative items-center gap-10 h-full max-h-[500px] max-w-[500px] md:max-w-[700px] w-full sm:col-span-4 xl:col-span-7 shadow-shadow-medium p-6 rounded-[25px]">
           {/*     <Parallax rotate={[-90, 90]} speed={0} easing={'easeInQuad'}> */}
-          <div className="w-[400px] h-[400px] border border-solid border-secondaryBG rounded-full relative">
+          <div className="max-w-[400px] h-[400px] w-full border border-solid border-secondaryBG rounded-full relative">
             <div className={`transition-opacity duration-300 ${skillIndex === 0 ? 'opacity-100' : 'opacity-0'}`}>
               <Frontend />
             </div>
