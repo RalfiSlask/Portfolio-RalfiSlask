@@ -1,45 +1,19 @@
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { LargeTextVariant, MediumTextVariant } from '../../../utils/motionvariants';
+import ProjectDescription from './ProjectDescription';
+import { Context } from '../../../context/Context';
+import { useContext } from 'react';
 
 interface IPageInfo {
   title: string;
 }
 
 const PageDescription: React.FC<IPageInfo> = ({ title }) => {
-  const LargeTextVariant: Variants = {
-    offscreen: {
-      x: -50,
-      opacity: 0,
-    },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      rotate: 0,
-      transition: {
-        type: 'ease',
-        bounce: 0,
-        duration: 0.4,
-      },
-    },
-  };
+  const context = useContext(Context);
 
-  const MediumTextVariant: Variants = {
-    offscreen: {
-      x: -50,
-      opacity: 0,
-    },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      rotate: 0,
+  if (!context) return;
 
-      transition: {
-        type: 'ease',
-        bounce: 0,
-        duration: 0.4,
-        delay: 0.2,
-      },
-    },
-  };
+  const { isScreenSizeMobile } = context;
 
   return (
     <motion.div
@@ -49,20 +23,25 @@ const PageDescription: React.FC<IPageInfo> = ({ title }) => {
       transition={{ duration: 0.6 }}
       className="col-span-4 md:col-span-8 xl:col-span-6 w-full flex flex-col items-center gap-10 xl:items-start xl:flex-col xl:gap-10 h-full"
     >
-      <motion.div variants={LargeTextVariant}>
+      {isScreenSizeMobile ? (
         <h2 className="text-[2.5rem] md:text-[3rem] xl:text-[4rem] font-medium w-[400px] xl:w-[250px] text-center xl:text-left">
           {title} <span className="text-blueColor text-[1.5rem] xl:text-[2.25rem]">.</span>
         </h2>
-      </motion.div>
-      <motion.div variants={MediumTextVariant}>
-        <p className="text-[1rem] sm:text-[1.25rem] md:text-[1.35rem] leading-14 tracking-wide max-w-[600px]">
-          Within my Github Profile, I maintain a collection of <span className="text-blueColor">60+ repositories </span>
-          showcasing a commitment to continuous learning. This assortment includes both{' '}
-          <span className="text-blueColor">frontend</span> and <span className="text-blueColor">fullstack </span>
-          projects, reflecting my independent endeavors and excersises completed during my academic studies
-          <span className="text-blueColor">.</span>
-        </p>
-      </motion.div>
+      ) : (
+        <motion.div variants={LargeTextVariant}>
+          <h2 className="text-[2.5rem] md:text-[3rem] xl:text-[4rem] font-medium w-[400px] xl:w-[250px] text-center xl:text-left">
+            {title} <span className="text-blueColor text-[1.5rem] xl:text-[2.25rem]">.</span>
+          </h2>
+        </motion.div>
+      )}
+
+      {isScreenSizeMobile ? (
+        <ProjectDescription />
+      ) : (
+        <motion.div variants={MediumTextVariant}>
+          <ProjectDescription />
+        </motion.div>
+      )}
     </motion.div>
   );
 };
