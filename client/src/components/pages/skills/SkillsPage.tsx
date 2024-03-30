@@ -1,5 +1,6 @@
 import TechnicalSkills from './TechnicalSkills';
 import { motion, Variants } from 'framer-motion';
+import BrainVSC from '../../../assets/images/brain.png';
 
 const SkillsPage = () => {
   const LargeTextVariant: Variants = {
@@ -39,14 +40,15 @@ const SkillsPage = () => {
   };
 
   return (
-    <div className="min-h-[800px] w-full flex flex-col sm:items-center md:items-center sm:flex-col xl:flex-row pt-40 max-w-[1200px] sm:gap-10 md:gap-20 xl:justify-between">
+    <div className="min-h-[800px] grid-4812 w-full relative pt-40 max-w-[1200px] gap-y-10 md:gap-20 place-items-center ">
       <motion.div
         initial="offscreen"
         whileInView={'onscreen'}
         viewport={{ margin: '-350px', once: true }}
         transition={{ duration: 0.6 }}
+        className="col-span-4 md:col-span-8 xl:col-span-4 "
       >
-        <div className="flex flex-col gap-10 w-[400px] sm:w-[500px] md:w-[700px] xl:w-[400px]">
+        <div className="col-span-4 relative flex flex-col gap-10 w-full sm:w-max-[500px] md:w-max-[700px] xl:w-max-[400px]">
           <motion.div variants={LargeTextVariant}>
             <h2 className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] xl:text-[4rem] font-medium">
               Technical Skills <span className="text-blueColor">.</span>
@@ -63,6 +65,13 @@ const SkillsPage = () => {
               </div>
             </div>
           </motion.div>
+          <img
+            src={BrainVSC}
+            alt="brain"
+            width="300"
+            loading="lazy"
+            className="absolute left-1/2 -translate-x-1/2 bottom-[-850px] xl:bottom-[-250px] opacity-50"
+          />
         </div>
       </motion.div>
       <TechnicalSkills />
