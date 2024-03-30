@@ -1,12 +1,11 @@
 import SketchItImg from '../../../assets/images/sketchit.jpg';
-import GithubIcon from './GithubIcon';
+
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
-import Github from '../../../assets/github.svg';
 
 const SketchitContainer = () => {
-  const skills = ['Typescript', 'Socket.io', 'Express', 'MongoDB'];
+  const skills = ['Typescript', 'Socket.io', 'Express', 'MongoDB', 'Sass'];
   const projectInfo = {
     title: 'Sketch It',
     description: 'Realtime multiplayer pictonary game using sockets.',
