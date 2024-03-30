@@ -12,6 +12,10 @@ router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/reset', (req, res) => {
+  res.send('it works');
+});
+
 router.post('/reset', async (req, res) => {
   try {
     await db
