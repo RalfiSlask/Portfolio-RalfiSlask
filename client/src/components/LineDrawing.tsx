@@ -1,11 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useInView } from 'react-intersection-observer';
+import { Context } from '../context/Context';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const LineFollowingScroll = () => {
+  const context = useContext(Context);
+
+  if (!context) return;
+
+  const { isScreenSizeMobile } = context;
+
   const svgRef = useRef(null);
   const { ref, inView } = useInView({ triggerOnce: true });
 
@@ -38,7 +45,11 @@ const LineFollowingScroll = () => {
   }, [inView, lineRef.current]);
   return (
     <>
-      {window.innerWidth > 650 ? (
+      {isScreenSizeMobile ? (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 2000" className="relative">
+          <path className="theLine" d="M 50,0 L 50,1800" fill="none" stroke="#25CEDE" strokeWidth="5px" />
+        </svg>
+      ) : (
         <svg ref={svgRef} xmlns="http://www.w3.org/2000/svg" viewBox={`0 400 600 1200`} className="relative ">
           <path
             ref={lineRef}
@@ -47,10 +58,6 @@ const LineFollowingScroll = () => {
             fill="none"
             stroke="#25CEDE"
           ></path>
-        </svg>
-      ) : (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 2000" className="relative">
-          <path className="theLine" d="M 50,0 L 50,1800" fill="none" stroke="#25CEDE" strokeWidth="5px" />
         </svg>
       )}
       <div className="w-[75px] h-[50px] rounded-full shadow-shadow-icon bg-primaryBG shadow- left-1/2 -translate-x-1/2 top-[-30px] absolute"></div>
