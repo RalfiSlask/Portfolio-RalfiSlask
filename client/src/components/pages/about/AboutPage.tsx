@@ -15,12 +15,12 @@ const AboutPage = () => {
   const { isScreenSizeMobile } = context;
 
   return (
-    <div className="grid-fill-4812 px-6 flex flex-col gap-20 w-full relative items-center">
+    <div className="grid-fill-4812 px-6 flex flex-col gap-20 w-full relative items-center text-white">
       <div className="grid-4812 max-w-[1200px] flex flex-col gap-10 w-full items-center xl:items-start">
         <motion.div
           initial="offscreen"
           whileInView={'onscreen'}
-          viewport={{ margin: '-350px' }}
+          viewport={{ margin: '-350px', once: true }}
           transition={{ duration: 0.6 }}
           className="col-span-4 md:col-start-2 md:col-end-8 xl:col-span-12"
         >
