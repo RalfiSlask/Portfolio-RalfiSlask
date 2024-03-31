@@ -3,3 +3,8 @@ export interface IFormInfo {
   email: string;
   message: string;
 }
+
+export type Message = {
+  role: 'user' | 'system';
+  content: string;
+};
