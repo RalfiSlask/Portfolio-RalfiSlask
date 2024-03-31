@@ -40,7 +40,7 @@ const SpotifySection = () => {
   };
 
   return (
-    <article className="bg-primaryBG shadow-shadow-medium p-6 flex items-center justify-center rounded-[25px] w-full min-h-[500px]">
+    <article className="bg-primaryBG shadow-shadow-medium p-6 flex items-center justify-center rounded-[25px] max-w-[500px] w-full min-h-[500px]">
       {!isAuthenticated && <AuthButton />}
       {isAuthenticated && <SpotifyPlayer />}
     </article>
