@@ -50,7 +50,7 @@ const AboutPage = () => {
           className="col-span-4 md:col-start-2 md:col-end-8 xl:col-span-12"
         >
           <motion.div variants={chatSpotifyVariant}>
-            <div className="flex flex-col xl:flex-row gap-10 min-h-[500px]">
+            <div className="flex flex-col xl:flex-row gap-10 min-h-[500px] items-center">
               <Chat />
               <SpotifySection />
             </div>
