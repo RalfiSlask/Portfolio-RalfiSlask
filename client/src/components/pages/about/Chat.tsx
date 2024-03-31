@@ -1,14 +1,18 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import sendLogo from '../../../assets/icons/send.svg';
 import MatteLogo from '../../../assets/images/Matte.png';
+import { Message } from '../../../utils/types';
+import TypingIndicator from './ui/TypingIndicator';
+import ChatDescription from './ui/ChatDescription';
+import MatteIcon from '../../../assets/icons/MatteLogo.png';
 
 const Chat = () => {
   const [message, setMessage] = useState('');
   const [answer, setAnswer] = useState('');
   const [displayedAnswer, setDisplayedAnswer] = useState('');
   const [typing, setTyping] = useState(false);
-  const [conversationHistory, setConversationHistory] = useState('');
-  const index = useRef(1);
+  const [conversationHistory, setConversationHistory] = useState<Message[]>([]);
+  const [hasInteracted, setHasInteracted] = useState(false);
 
   const handleMessageOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const target = e.target;
@@ -18,6 +22,7 @@ const Chat = () => {
 
   const handleClickAndSendChatMessage = async (e: FormEvent) => {
     e.preventDefault();
+    setHasInteracted(true);
     setMessage('');
     await sendChatMessageToServer();
   };
@@ -30,7 +35,8 @@ const Chat = () => {
           'Content-Type': 'application/json',
         },
       });
-      setConversationHistory(''); // Återställ konversationshistoriken på klienten
+
+      setConversationHistory([]); // Återställ konversationshistoriken på klienten
     } catch (err) {
       console.error('Error resetting conversation:', err);
     }
@@ -57,10 +63,14 @@ const Chat = () => {
       }
 
       const aiAnswer = await response.json();
-      console.log(aiAnswer);
+
+      setConversationHistory(prevHistory => [
+        ...prevHistory,
+        { role: 'user', content: message },
+        { role: 'system', content: aiAnswer.message },
+      ]);
 
       setAnswer(aiAnswer.message);
-      setConversationHistory(aiAnswer.conversation.replace(`\nBot: ${aiAnswer.message}\n`, ''));
     } catch (err) {
       console.log(err, 'error');
     }
@@ -85,25 +95,22 @@ const Chat = () => {
     <>
       <div className=" flex-col items-center md:items-start flex xl:flex-row w-full gap-8 justify-end shadow-shadow-medium p-6 min-h-[500px] rounded-[25px] h-full">
         <div className="w-full xl:w-[230px] h-full flex-col-reverse flex xl:flex-col justify-between items-center">
-          <p className="text-[1rem] md:text-[1.25rem] xl:text-[1rem]">
-            Feel free to chat with my <span className="text-blueColor">clone </span>to the right here. I am here to
-            <span className="text-blueColor"> engage</span> in all sorts of topics and discussions. What's on your{' '}
-            <span className="text-blueColor">mind </span>
-            today?
-          </p>
+          <ChatDescription />
           <img src={MatteLogo} width="180" height="290" alt="Matthias" className="object-cover" loading="lazy" />
         </div>
         <div className="flex flex-col gap-10 md:justify-between w-full h-full xl:max-w-[375px] ">
-          <div className="h-[375px] w-full shadow-shadow-input rounded-[10px] p-4 overflow-auto bg-secondaryBG">
-            <div>{conversationHistory}</div>
-            {typing ? (
-              <div className="typing-indicator">
-                <span className="typing-indicator-dot"></span>
-                <span className="typing-indicator-dot"></span>
-                <span className="typing-indicator-dot"></span>
+          <div className="h-[375px] w-full shadow-shadow-input rounded-[10px] pl-6 py-6 pr-12 overflow-auto bg-secondaryBG">
+            {hasInteracted && (
+              <div className="flex flex-col gap-2">
+                <div className="flex gap-4 items-center">
+                  <div className="rounded-full flex items-center justify-center bg-primaryBG h-[30px] w-[30px]">
+                    <img src={MatteIcon} alt="Matte icon" width="20" height="20" />
+                  </div>
+                  <p>Matthias</p>
+                </div>
+
+                {typing ? <TypingIndicator /> : <p className="ml-12">{displayedAnswer}</p>}
               </div>
-            ) : (
-              displayedAnswer
             )}
           </div>
           <form className="flex flex-col sm:flex-row items-center gap-4" onSubmit={handleClickAndSendChatMessage}>
