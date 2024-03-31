@@ -99,7 +99,7 @@ const Chat = () => {
           <img src={MatteLogo} width="180" height="290" alt="Matthias" className="object-cover" loading="lazy" />
         </div>
         <div className="flex flex-col gap-10 md:justify-between w-full h-full xl:max-w-[375px] ">
-          <div className="h-[375px] w-full shadow-shadow-input rounded-[10px] pl-6 py-6 pr-12 overflow-auto bg-secondaryBG">
+          <div className="h-[375px] w-full shadow-shadow-input rounded-[10px] pl-6 py-6 pr-4 sm:pr-12 overflow-auto bg-secondaryBG">
             {hasInteracted && (
               <div className="flex flex-col gap-2">
                 <div className="flex gap-4 items-center">
@@ -109,7 +109,7 @@ const Chat = () => {
                   <p>Matthias</p>
                 </div>
 
-                {typing ? <TypingIndicator /> : <p className="ml-12">{displayedAnswer}</p>}
+                {typing ? <TypingIndicator /> : <p className="ml-4 sm:ml-12">{displayedAnswer}</p>}
               </div>
             )}
           </div>
