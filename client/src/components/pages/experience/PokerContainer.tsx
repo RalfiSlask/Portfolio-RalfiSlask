@@ -14,7 +14,7 @@ const PokerContainer = () => {
         ref={ref}
         className={`${
           inView ? 'opacity-100 blur-0 ' : 'opacity-0 blur-[5px]'
-        } work md:left-[20%] xl:left-[75%] top-[300px] h-full`}
+        } work md:left-[8%] md:translate-x-1/2 top-[300px] xl:translate-x-0 md:top-[150px] h-full`}
       >
         <div className="date">2012 - 2022</div>
         <div className="px-4 flex justify-center overflow-hidden">
@@ -27,7 +27,7 @@ const PokerContainer = () => {
             className="bg-white w-full object-cover rounded-lg shadow-shadow-white-icon-hover"
           />
         </div>
-        <TypeOfWork work="Professional Poker Player" />
+        <TypeOfWork work="Poker" />
       </div>
     </>
   );

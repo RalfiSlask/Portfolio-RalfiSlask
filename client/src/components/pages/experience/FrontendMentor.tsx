@@ -10,7 +10,12 @@ const FrontendMentor = () => {
 
   return (
     <>
-      <div ref={ref} className={`${inView ? 'opacity-100 ' : 'opacity-0'} h-full work right-[5%] top-[790px]`}>
+      <div
+        ref={ref}
+        className={`${
+          inView ? 'opacity-100 ' : 'opacity-0'
+        } h-full work md:left-[60%] xl:left-[70%] md:-translate-x-1/2 top-[790px] md:top-[680px] xl:top-[650px]`}
+      >
         <div className="date">2022 - 2023</div>
         <div className="px-4 flex justify-center overflow-hidden">
           <img
