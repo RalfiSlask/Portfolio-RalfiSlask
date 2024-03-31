@@ -196,7 +196,7 @@ body,
 }
 
 .chat-input {
-  @apply rounded-[12px] shadow-shadow-input h-[50px] w-[300px] outline-none px-6 bg-secondaryBG;
+  @apply rounded-[12px] shadow-shadow-input h-[50px] w-[250px] sm:w-[300px] outline-none px-6 bg-secondaryBG;
 }
 
 .icon-container {
