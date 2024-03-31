@@ -14,7 +14,7 @@ const SocialMediaNavbar = () => {
     <nav
       className={`${
         isVisible ? 'sm:left-10 md:left-[30px]' : 'sm:left-40 md:left-[-100px]'
-      }  w-[50px] h-[160px] bg-primaryBG transition-left duration-700 z-50 fixed left-10 bottom-16 shadow-shadow-oval rounded-md flex flex-col items-center justify-center gap-4`}
+      }  w-[50px] h-[160px] bg-primaryBG transition-left duration-700 z-50 fixed bottom-16 shadow-shadow-oval rounded-md flex flex-col items-center justify-center gap-4`}
     >
       <div className="social-media">
         <a href="https://www.linkedin.com/in/matthias-nilsson-68023b294/" target="_blank">
