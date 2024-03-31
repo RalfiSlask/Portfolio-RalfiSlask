@@ -17,6 +17,23 @@ export const chatSpotifyVariant: Variants = {
   },
 };
 
+export const TechnicalSkillsVariant: Variants = {
+  offscreen: {
+    x: 100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: 'ease',
+      bounce: 0,
+      duration: 0.8,
+    },
+  },
+};
+
 export const LargeTextVariant: Variants = {
   offscreen: {
     x: -50,
