@@ -53,7 +53,7 @@ router.post('/send', async (req, res) => {
     const normalizedContext = Array.isArray(context) ? context : [];
 
     const messages = [
-      { role: 'system', content: 'du är matematik professor' },
+      { role: 'system', content: botData.role },
       ...normalizedContext.map((c) => ({ role: c.role, content: c.content })),
       { role: 'user', content: message },
     ];
