@@ -47,12 +47,13 @@ router.post('/send', async (req, res) => {
       botData = { name: 'MatteBot', role: 'system', conversation: '' };
       await db.collection('AiBot').insertOne(botData);
     }
-    console.log('does exist:', botData.context);
+
+    console.log(botData.content);
 
     const normalizedContext = Array.isArray(context) ? context : [];
 
     const messages = [
-      { role: 'system', content: botData.content },
+      { role: 'system', content: 'du är matematik professor' },
       ...normalizedContext.map((c) => ({ role: c.role, content: c.content })),
       { role: 'user', content: message },
     ];
