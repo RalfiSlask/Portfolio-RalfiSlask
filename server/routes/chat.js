@@ -18,6 +18,7 @@ router.get('/reset', (req, res) => {
 
 router.post('/reset', async (req, res) => {
   try {
+    const db = req.app.locals.db;
     await db
       .collection('AiBot')
       .updateOne({ name: 'MatteBot' }, { $set: { conversation: '' } });
@@ -32,7 +33,8 @@ router.post('/send', async (req, res) => {
   const db = req.app.locals.db;
 
   try {
-    const { message, context } = req.body; // Ta emot både meddelandet och context från klienten
+    const { message, context } = req.body;
+
     console.log('context from client:', context);
     if (!message) {
       return res.status(400).json({ error: 'no message' });
@@ -45,16 +47,17 @@ router.post('/send', async (req, res) => {
       botData = { name: 'MatteBot', role: 'system', conversation: '' };
       await db.collection('AiBot').insertOne(botData);
     }
-    console.log('does exist:', botData.conversation, botData.role);
+    console.log('does exist:', botData.context);
 
-    // Här använder vi context från klienten direkt i vår förfrågan.
-    // Vi antar att context är en sträng som representerar den relevanta delen av konversationshistoriken.
-    // Om context är i ett annat format kan du behöva anpassa detta.
+    const normalizedContext = Array.isArray(context) ? context : [];
+
     const messages = [
-      { role: 'system', content: botData.role },
-      ...context.map((c) => ({ role: c.role, content: c.content })), // Lägg till context som en del av meddelandena
+      { role: 'system', content: botData.content },
+      ...normalizedContext.map((c) => ({ role: c.role, content: c.content })),
       { role: 'user', content: message },
     ];
+
+    console.log(messages);
 
     const chatResponse = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
@@ -63,8 +66,6 @@ router.post('/send', async (req, res) => {
 
     const chatAnswer = chatResponse.choices[0].message.content;
 
-    // Här uppdaterar vi bara botData.conversation med det nya meddelandet och svaret
-    // Om du vill spara hela konversationshistoriken inklusive context, behöver du anpassa detta
     botData.conversation += `\nUser: ${message}\nBot: ${chatAnswer}\n`;
     await db
       .collection('AiBot')
@@ -77,7 +78,7 @@ router.post('/send', async (req, res) => {
       message: chatAnswer,
       conversation: botData.conversation,
       context: messages,
-    }); // Skicka tillbaka den uppdaterade konversationen och kontexten
+    });
   } catch (err) {
     console.log(err, 'something went wrong');
     res.status(500).json({

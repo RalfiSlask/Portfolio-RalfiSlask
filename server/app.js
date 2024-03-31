@@ -37,7 +37,6 @@ app.post('/exchange_token', async (req, res) => {
   const client_id = process.env.CLIENT_ID;
   const client_secret = process.env.CLIENT_SECRET;
   const redirect_uri = process.env.CLIENT_URL;
-  console.log(redirect_uri, req.body);
 
   const response = await fetch('https://accounts.spotify.com/api/token', {
     method: 'POST',
@@ -55,7 +54,6 @@ app.post('/exchange_token', async (req, res) => {
   });
 
   const data = await response.json();
-  console.log(data);
   res.json(data); // Send the tokens back to the front-end
 });
 
@@ -69,7 +67,6 @@ const transporter = nodemailer.createTransport({
 
 app.post('/api/sendmail', (req, res) => {
   const { name, email, message } = req.body;
-  console.log(req.body);
   const mailOptions = {
     from: email,
     to: process.env.EMAIL_USER,
@@ -79,10 +76,9 @@ app.post('/api/sendmail', (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
+      console.log(error, 'error');
       res.status(500).send('Error sending mail');
     } else {
-      console.log('Email sent: ' + info.response);
       res.status(200).send('Email sent succesfully');
     }
   });
