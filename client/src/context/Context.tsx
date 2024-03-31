@@ -27,8 +27,12 @@ export const ContextProvider: React.FC<ChildProps> = ({ children }) => {
 
     window.addEventListener('resize', handleResize);
 
-    return () => window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
+    console.log(isScreenSizeMobile);
+  }, [isScreenSizeMobile]);
 
   const contextValue = {
     isScreenSizeMobile: isScreenSizeMobile,

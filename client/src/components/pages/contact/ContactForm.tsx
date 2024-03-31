@@ -125,7 +125,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-4 w-full" onSubmit={submitForm} autoComplete="none">
+    <form className="text-white flex flex-col gap-4 w-full" onSubmit={submitForm} autoComplete="none">
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <motion.div variants={inputVariant}>
           <div className="flex flex-col gap-2 items-end">

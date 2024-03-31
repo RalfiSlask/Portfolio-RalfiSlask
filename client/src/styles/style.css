@@ -90,6 +90,7 @@ html,
 body,
 #root {
   scroll-behavior: smooth;
+  color: white;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -244,9 +245,7 @@ line {
 }
 
 body {
-  /*   background: linear-gradient(to right, #171a1a, #1c1f20); */
   background: linear-gradient(to right, #1a1a1a, #171717);
-  /*   background: $primaryBG; */
   font-family: "Montserrat", sans-serif;
 }
 
