@@ -4,27 +4,11 @@ import Backend from './Backend';
 import PrevArrow from '../../../assets/icons/prev.svg';
 import NextArrow from '../../../assets/icons/next.svg';
 import Tools from './Tools';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { TechnicalSkillsVariant } from '../../../utils/motionvariants';
 
 const TechnicalSkills = () => {
   const [skillIndex, setSkillIndex] = useState(0);
-
-  const TechnicalSkillsVariant: Variants = {
-    offscreen: {
-      x: 100,
-      opacity: 0,
-    },
-    onscreen: {
-      x: 0,
-      opacity: 1,
-      rotate: 0,
-      transition: {
-        type: 'ease',
-        bounce: 0,
-        duration: 0.8,
-      },
-    },
-  };
 
   const increaseCount = () => {
     setSkillIndex(prev => {
@@ -52,7 +36,7 @@ const TechnicalSkills = () => {
     <motion.div
       initial="offscreen"
       whileInView={'onscreen'}
-      viewport={{ margin: '-50px', once: true }}
+      viewport={{ margin: '-350px', once: true }}
       className="col-span-4 md:col-span-8 xl:col-span-7 flex justify-center relative items-center h-[700px] md:h-[650px] max-h-[500px] sm:max-w-[500px] md:max-w-[700px] w-full"
       transition={{ duration: 0.6 }}
     >
