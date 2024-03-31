@@ -1,4 +1,4 @@
-import AudiophileImg from '../../../assets/images/audiophile.jpg';
+import AudiophileImg from '../../../assets/images/audiophile.webp';
 import Astropos from 'atropos/react';
 
 const AudiophileContainer = () => {

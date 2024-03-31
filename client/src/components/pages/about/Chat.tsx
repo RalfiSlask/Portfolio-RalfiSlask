@@ -1,10 +1,10 @@
-import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import sendLogo from '../../../assets/icons/send.svg';
-import MatteLogo from '../../../assets/images/Matte.png';
+import MatteLogo from '../../../assets/images/Matte.webp';
 import { Message } from '../../../utils/types';
 import TypingIndicator from './ui/TypingIndicator';
 import ChatDescription from './ui/ChatDescription';
-import MatteIcon from '../../../assets/icons/MatteLogo.png';
+import MatteIcon from '../../../assets/icons/MatteLogo.webp';
 
 const Chat = () => {
   const [message, setMessage] = useState('');

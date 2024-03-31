@@ -1,6 +1,6 @@
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
-import KanbanImg from '../../../assets/images/kanban.jpg';
+import KanbanImg from '../../../assets/images/kanban.webp';
 import { motion, Variants } from 'framer-motion';
 
 const KanbanContainer = () => {

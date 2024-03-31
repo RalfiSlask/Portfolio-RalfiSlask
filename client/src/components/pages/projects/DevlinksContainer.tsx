@@ -1,4 +1,4 @@
-import DevlinksImg from '../../../assets/images/devlinks.jpg';
+import DevlinksImg from '../../../assets/images/devlinks.webp';
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';

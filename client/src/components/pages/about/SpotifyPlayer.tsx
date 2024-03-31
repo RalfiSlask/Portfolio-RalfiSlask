@@ -1,5 +1,3 @@
-const playlistId = '2T33MKoZWrxVmA9ynmDMQ4';
-
 const SpotifyPlayer = () => {
   return (
     <iframe

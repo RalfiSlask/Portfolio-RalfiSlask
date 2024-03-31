@@ -1,4 +1,4 @@
-import MediaInstitutetImg from '../../../assets/images/mediainstitutet.png';
+import MediaInstitutetImg from '../../../assets/images/mediainstitutet.webp';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import TypeOfWork from './ui/TypeOfWork';

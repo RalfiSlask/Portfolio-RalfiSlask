@@ -6,15 +6,13 @@ import BuiltWith from './components/pages/contact/ui/BuiltWith';
 import Projects from './components/pages/projects/Projects';
 import ArrowDownLogo from './assets/icons/arrowdown.svg';
 import ContactPage from './components/pages/contact/ContactPage';
-import Background from './assets/images/bg3.jpg';
+import Background from './assets/images/bg3.webp';
 import LineDrawing from './components/LineDrawing';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import Experience from './components/pages/experience/Experience';
 import SkillsPage from './components/pages/skills/SkillsPage';
 import SEO from './SEO';
 import LottieAnimation from './LottieAnimation';
-import BrainVSC from './assets/images/brain.png';
-import AliveVSC from './assets/images/alive.png';
 
 function App() {
   return (

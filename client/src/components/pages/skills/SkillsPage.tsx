@@ -1,6 +1,6 @@
 import TechnicalSkills from './TechnicalSkills';
 import { motion } from 'framer-motion';
-import BrainVSC from '../../../assets/images/brain.png';
+import BrainVSC from '../../../assets/images/brain.webp';
 import SkillsDescription from './ui/SkillsDescription';
 import { LargeTextVariant, MediumTextVariant } from '../../../utils/motionvariants';
 import { useContext } from 'react';

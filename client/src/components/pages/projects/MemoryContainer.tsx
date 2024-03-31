@@ -1,4 +1,4 @@
-import MemoryImg from '../../../assets/images/memory.jpg';
+import MemoryImg from '../../../assets/images/memory.webp';
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';

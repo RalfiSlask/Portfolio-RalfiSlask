@@ -1,7 +1,7 @@
 import FigmaLogo from '../../../assets/icons/figma.svg';
 import GitLogo from '../../../assets/icons/git.svg';
 import ViteLogo from '../../../assets/icons/vite.svg';
-import DigitalOceanLogo from '../../../assets/icons/digitalocean.png';
+import DigitalOceanLogo from '../../../assets/icons/digitalocean.webp';
 
 const Tools = () => {
   return (

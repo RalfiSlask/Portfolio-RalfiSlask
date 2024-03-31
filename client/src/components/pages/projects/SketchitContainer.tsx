@@ -1,31 +1,14 @@
-import SketchItImg from '../../../assets/images/sketchit.jpg';
-
+import SketchItImg from '../../../assets/images/sketchit.webp';
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { projectVariant } from '../../../utils/motionvariants';
 
 const SketchitContainer = () => {
   const skills = ['Typescript', 'Socket.io', 'Express', 'MongoDB', 'Sass'];
   const projectInfo = {
     title: 'Sketch It',
     description: 'Realtime multiplayer pictonary game using sockets.',
-  };
-
-  const projectVariant: Variants = {
-    offscreen: {
-      y: 150,
-      opacity: 0,
-    },
-    onscreen: {
-      y: 15,
-      opacity: 1,
-      rotate: 0,
-      transition: {
-        type: 'spring',
-        bounce: 0,
-        duration: 1,
-      },
-    },
   };
 
   return (

@@ -1,11 +1,11 @@
 import ReactLogo from '../../../assets/icons/react.svg';
-import HtmlLogo from '../../../assets/icons/html.png';
-import CSS3Logo from '../../../assets/icons/css3.png';
+import HtmlLogo from '../../../assets/icons/html.webp';
+import CSS3Logo from '../../../assets/icons/css3.webp';
 import JavascriptLogo from '../../../assets/icons/javascript.svg';
 import SassLogo from '../../../assets/icons/sass.svg';
 import VueLogo from '../../../assets/icons/vuejs.svg';
 import TypescriptLogo from '../../../assets/icons/typescript.svg';
-import TailwindLogo from '../../../assets/icons/tailwind.png';
+import TailwindLogo from '../../../assets/icons/tailwind.webp';
 
 const Frontend = () => {
   return (

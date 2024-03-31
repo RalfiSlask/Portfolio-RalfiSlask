@@ -1,4 +1,4 @@
-import FrontendmentorImg from '../../../assets/images/frontendmentor.png';
+import FrontendmentorImg from '../../../assets/images/frontendmentor.webp';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import TypeOfWork from './ui/TypeOfWork';

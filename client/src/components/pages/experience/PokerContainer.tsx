@@ -1,4 +1,4 @@
-import PokerImg from '../../../assets/images/poker3.png';
+import PokerImg from '../../../assets/images/poker3.webp';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import TypeOfWork from './ui/TypeOfWork';

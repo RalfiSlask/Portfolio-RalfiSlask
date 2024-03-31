@@ -1,8 +1,8 @@
-import WYSIWYGImg from '../../../assets/images/wysiwyg.jpg';
+import WYSIWYGImg from '../../../assets/images/wysiwyg.webp';
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
-import AliveVSC from '../../../assets/images/alive.png';
+import AliveVSC from '../../../assets/images/alive.webp';
 
 const WYSIWYGContainer = () => {
   const skills = ['React', 'MySQL', 'Express', 'WYSIWYG', 'Sass'];
@@ -36,7 +36,7 @@ const WYSIWYGContainer = () => {
     >
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <motion.div variants={projectVariant}>
-          <div className="bg-primaryBG p-10 shadow-shadow-medium max-h-[450px] w-full col-span-4 group rounded-[25px] cursor-pointer flex flex-col gap-6">
+          <div className="bg-primaryBG p-10 shadow-shadow-medium max-[550px] md:max-h-[450px] w-full col-span-4 group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl w-full">
               <img
                 src={WYSIWYGImg}

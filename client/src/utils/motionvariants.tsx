@@ -34,6 +34,23 @@ export const TechnicalSkillsVariant: Variants = {
   },
 };
 
+export const projectVariant: Variants = {
+  offscreen: {
+    y: 150,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 15,
+    opacity: 1,
+    rotate: 0,
+    transition: {
+      type: 'spring',
+      bounce: 0,
+      duration: 1,
+    },
+  },
+};
+
 export const LargeTextVariant: Variants = {
   offscreen: {
     x: -50,

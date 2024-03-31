@@ -1,4 +1,4 @@
-import FeedbackImg from '../../../assets/images/feedback.jpg';
+import FeedbackImg from '../../../assets/images/feedback.webp';
 import SkillsButtons from './SkillsButtons';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';

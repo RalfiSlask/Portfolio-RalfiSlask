@@ -1,5 +1,3 @@
-import arrowUpIcon from '../../../assets/arrowopen.svg';
-
 interface IProjectInfo {
   projectInfo: {
     title: string;
