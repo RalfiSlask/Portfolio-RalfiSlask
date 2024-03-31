@@ -216,11 +216,11 @@ body,
 }
 
 .date {
-  @apply text-center text-[2rem] sm:text-[2rem] md:text-[2rem] xl:text-[2.25rem];
+  @apply text-center text-[1.25rem] md:text-[1.5rem];
 }
 
 .work {
-  @apply bg-primaryBG left-1/2 -translate-x-1/2 min-w-[300px] max-w-[300px] py-2 sm:max-w-[400px] md:min-w-[400px] md:max-w-[400px] xl:min-w-[450px]  xl:max-w-[450px] max-h-[300px] shadow-shadow-oval transition-shadow duration-500 gray-shiny rounded-xl items-center flex gap-2 sm:gap-2 md:gap-4  flex-col justify-center text-[1rem] sm:text-[1.5rem] md:text-[2rem] xl:text-[2.25rem] absolute;
+  @apply bg-primaryBG left-1/2 -translate-x-1/2 min-w-[300px] md:w-[200px] md:max-w-[200px] py-2 sm:max-w-[400px] md:min-w-[300px] xl:min-w-[450px] xl:max-w-[450px] max-h-[200px] xl:max-h-[250px] shadow-shadow-oval transition-shadow duration-500 gray-shiny rounded-xl items-center flex gap-2 sm:gap-2 md:gap-4  flex-col justify-center text-[1rem] sm:text-[1.5rem] md:text-[2rem] xl:text-[2.25rem] absolute;
 }
 
 .grid-4812 {
