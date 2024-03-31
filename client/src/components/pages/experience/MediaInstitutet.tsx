@@ -10,7 +10,12 @@ const MediaInstitutet = () => {
 
   return (
     <>
-      <div ref={ref} className={`${inView ? 'opacity-100 blur-0 ' : 'opacity-0 blur-[5px]'} work top-[1240px] h-full`}>
+      <div
+        ref={ref}
+        className={`${
+          inView ? 'opacity-100 blur-0 ' : 'opacity-0 blur-[5px]'
+        } work md:left-[35%] top-[1240px] md:top-[1200px] h-full`}
+      >
         <div className="date">2023 - Present</div>
         <div className="px-4 flex justify-center w-full overflow-hidden">
           <img
