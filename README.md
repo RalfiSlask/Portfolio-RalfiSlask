@@ -4,27 +4,27 @@
 
 ### Landing
 
-<img src="" width="506" height="400" alt="Landing">
+<img src="https://github.com/RalfiSlask/Portfolio-RalfiSlask/assets/112242026/192fc331-ca68-42e8-9c68-081c3986247d" width="400" height="300" alt="Landing">
 
 ### About Me
 
-<img src="" width="506" height="400" alt="About Me">
+<img src="https://github.com/RalfiSlask/Portfolio-RalfiSlask/assets/112242026/3cf9bf9d-f380-4b09-948f-602c740e8f0f" width="400" height="250" alt="About Me">
 
 ### Experience
 
-<img src="" width="506" height="400" alt="Experience">
+<img src="https://github.com/RalfiSlask/Portfolio-RalfiSlask/assets/112242026/24922976-a803-4938-8894-8d4d8e264ee5" width="400" height="300" alt="Experience">
 
 ### Technical Skills
 
-<img src="" width="506" height="400" alt="Skills">
+<img src="https://github.com/RalfiSlask/Portfolio-RalfiSlask/assets/112242026/ee0cd820-dca8-4e8e-9301-4bf7b3cef257" width="400" height="250" alt="Skills">
 
 ### Work
 
-<img src="" width="506" height="400" alt="End Screen">
+<img src="https://github.com/RalfiSlask/Portfolio-RalfiSlask/assets/112242026/8f0aafcb-a823-4ee2-b3c5-ac8facd3b536" width="400" height="300" alt="End Screen">
 
 ### Contact
 
-<img src="" width="506" height="400" alt="End Screen">
+<img src="https://github.com/RalfiSlask/Portfolio-RalfiSlask/assets/112242026/bd798265-4aed-445f-bef2-7151eeea7627" width="400" height="300" alt="End Screen">
 
 ## Tech Stack
 
