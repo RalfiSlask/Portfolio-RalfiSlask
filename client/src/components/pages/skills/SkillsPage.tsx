@@ -35,7 +35,7 @@ const SkillsPage = () => {
         <motion.div
           initial="offscreen"
           whileInView={'onscreen'}
-          viewport={{ margin: '-350px' }}
+          viewport={{ margin: '-50px' }}
           transition={{ duration: 0.6 }}
           className="col-span-4 md:col-span-8 xl:col-span-4"
         >

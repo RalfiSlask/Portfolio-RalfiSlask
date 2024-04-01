@@ -91,7 +91,7 @@ const TechnicalSkills = () => {
         <motion.div
           initial="offscreen"
           whileInView={'onscreen'}
-          viewport={{ margin: '-350px', once: true }}
+          viewport={{ margin: '0px', once: true }}
           className="col-span-4 md:col-span-8 xl:col-span-7 flex justify-center relative items-center h-[700px] md:h-[650px] max-h-[500px] sm:max-w-[500px] md:max-w-[700px] w-full"
           transition={{ duration: 0.6 }}
         >

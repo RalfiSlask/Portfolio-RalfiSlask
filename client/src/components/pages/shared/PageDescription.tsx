@@ -19,7 +19,7 @@ const PageDescription: React.FC<IPageInfo> = ({ title }) => {
     <motion.div
       initial="offscreen"
       whileInView={'onscreen'}
-      viewport={{ margin: '-350px' }}
+      viewport={{ margin: '-50px' }}
       transition={{ duration: 0.6 }}
       className="col-span-4 md:col-span-8 xl:col-span-6 w-full flex flex-col items-center gap-10 xl:items-start xl:flex-col xl:gap-10 h-full"
     >
