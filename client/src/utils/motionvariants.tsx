@@ -12,7 +12,7 @@ export const chatSpotifyVariant: Variants = {
     transition: {
       type: 'spring',
       bounce: 0,
-      duration: 0.8,
+      duration: 0.6,
     },
   },
 };
@@ -29,7 +29,7 @@ export const TechnicalSkillsVariant: Variants = {
     transition: {
       type: 'ease',
       bounce: 0,
-      duration: 0.8,
+      duration: 0.6,
     },
   },
 };
@@ -63,7 +63,7 @@ export const LargeTextVariant: Variants = {
     transition: {
       type: 'ease',
       bounce: 0,
-      duration: 0.4,
+      duration: 0.6,
     },
   },
 };
@@ -81,7 +81,7 @@ export const MediumTextVariant: Variants = {
     transition: {
       type: 'ease',
       bounce: 0,
-      duration: 0.4,
+      duration: 0.6,
       delay: 0.2,
     },
   },

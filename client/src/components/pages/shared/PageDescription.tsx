@@ -19,18 +19,18 @@ const PageDescription: React.FC<IPageInfo> = ({ title }) => {
     <motion.div
       initial="offscreen"
       whileInView={'onscreen'}
-      viewport={{ margin: '-350px', once: true }}
+      viewport={{ margin: '-350px' }}
       transition={{ duration: 0.6 }}
       className="col-span-4 md:col-span-8 xl:col-span-6 w-full flex flex-col items-center gap-10 xl:items-start xl:flex-col xl:gap-10 h-full"
     >
       {isScreenSizeMobile ? (
         <h2 className="text-[2.5rem] md:text-[3rem] xl:text-[4rem] font-medium w-[400px] xl:w-[250px] text-center xl:text-left">
-          {title} <span className="text-blueColor text-[1.5rem] xl:text-[2.25rem]">.</span>
+          {title} <span className="text-blueColor">.</span>
         </h2>
       ) : (
         <motion.div variants={LargeTextVariant}>
           <h2 className="text-[2.5rem] md:text-[3rem] xl:text-[4rem] font-medium w-[400px] xl:w-[250px] text-center xl:text-left">
-            {title} <span className="text-blueColor text-[1.5rem] xl:text-[2.25rem]">.</span>
+            {title} <span className="text-blueColor">.</span>
           </h2>
         </motion.div>
       )}

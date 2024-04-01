@@ -13,8 +13,16 @@ import Experience from './components/pages/experience/Experience';
 import SkillsPage from './components/pages/skills/SkillsPage';
 import SEO from './SEO';
 import LottieAnimation from './LottieAnimation';
+import { useContext } from 'react';
+import { Context } from './context/Context';
 
 function App() {
+  const context = useContext(Context);
+
+  if (!context) return;
+
+  const { isScreenSizeMobile } = context;
+
   return (
     <>
       <SEO />
@@ -50,6 +58,9 @@ function App() {
         <section className="grid-fill-4812 flex justify-center gray-shiny w-screen h-[2000px] relative">
           <LineDrawing />
           <Experience />
+          {isScreenSizeMobile && (
+            <div className="absolute w-[30px] h-[90%] top-0 shadow-shadow-path left-1/2 -translate-x-1/2 z-0"></div>
+          )}
         </section>
 
         <section className="grid-fill-4812 px-6 relative flex w-screen justify-center pt-10 md:pt-20 xl:pt-40 pb-80  xl:pb-60  bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
