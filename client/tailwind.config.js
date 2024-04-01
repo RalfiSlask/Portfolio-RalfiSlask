@@ -12,6 +12,7 @@ export default {
       boxShadow: {
         'shadow-medium': '6.223px 6.223px 18.669px 0px #000, -6.223px -6.223px 18.669px 0px #24282e',
         'shadow-input': '6.223px 6.223px 18.669px 0px #000 inset, -6.223px -6.223px 18.669px 0px #24282e inset',
+        'shadow-path': '3px 4px 4px 0px #000 inset, -3px -4px 4px 2px #24282e inset',
         'shadow-oval': '6.223px 6.223px 18.669px 0px #000, -6.223px -6.223px 18.669px 0px #24282e',
         'shadow-icon': '5px 5px 10px -5px #24282e inset, -5px -5px 10px -5px  #000 inset',
         'shadow-skills': '6px 6px 12px 0px rgba(0, 0, 0, 0.25), -6px -2px 12px 0px #24282e',
