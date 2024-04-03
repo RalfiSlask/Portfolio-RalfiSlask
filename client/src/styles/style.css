@@ -205,7 +205,7 @@ body,
 }
 
 .skills-icon-container {
-  @apply w-[50px] h-[50px] bg-skillsBG rounded-[72px] bg-primaryBG shadow-shadow-skills flex justify-center items-center;
+  @apply h-[40px] w-[40px] sm:w-[50px] sm:h-[50px] bg-skillsBG rounded-[72px] bg-primaryBG shadow-shadow-skills flex justify-center items-center;
 }
 
 .link-icon {
