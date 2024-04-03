@@ -109,7 +109,7 @@ const Chat = () => {
                   <p>Matthias</p>
                 </div>
 
-                {typing ? <TypingIndicator /> : <p className="ml-4 sm:ml-12">{displayedAnswer}</p>}
+                {typing ? <TypingIndicator /> : <p className="ml-0 sm:ml-12">{displayedAnswer}</p>}
               </div>
             )}
           </div>
