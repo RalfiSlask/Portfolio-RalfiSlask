@@ -13,8 +13,13 @@ import Experience from './components/pages/experience/Experience';
 import SkillsPage from './components/pages/skills/SkillsPage';
 import SEO from './SEO';
 import LottieAnimation from './LottieAnimation';
-import { useContext } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { Context } from './context/Context';
+
+const LazyLoadedAbout = React.lazy(() => import('./components/pages/about/AboutPage'));
+const LazyLoadedExperience = React.lazy(() => import('./components/pages/experience/Experience'));
+const LazyLoadedLineDrawing = React.lazy(() => import('./components/LineDrawing'));
+const LazyLoadedProjects = React.lazy(() => import('./components/pages/projects/Projects'));
 
 function App() {
   const context = useContext(Context);
@@ -47,13 +52,14 @@ function App() {
             <img src={ArrowDownLogo} alt="arrow down icon" width="30" height="30" />
           </a>
         </section>
-
-        <section
-          className="grid-fill-4812 grid-4812 px-6 w-screen pt-10 md:pt-20 xl:pt-40 pb-40 md:pb-60 xl:pb-80 relative"
-          id="about"
-        >
-          <AboutPage />
-        </section>
+        <Suspense fallback={<div>Loading...</div>}>
+          <section
+            className="grid-fill-4812 grid-4812 px-6 w-screen pt-10 md:pt-20 xl:pt-40 pb-40 md:pb-60 xl:pb-80 relative"
+            id="about"
+          >
+            <LazyLoadedAbout />
+          </section>
+        </Suspense>
 
         <section className="grid-fill-4812 flex justify-center gray-shiny w-screen h-[2000px] relative">
           <LineDrawing />
@@ -66,12 +72,14 @@ function App() {
         <section className="grid-fill-4812 px-6 relative flex w-screen justify-center pt-10 md:pt-20 xl:pt-40 pb-80  xl:pb-60  bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
           <SkillsPage />
         </section>
-        <section
-          className="px-6 grid-fill-4812 relative flex justify-center w-screen pt-10 md:pt-20 xl:pt-40 pb-80 xl:pb-60 border-t border-solid border-opacity-10 border-blueColor"
-          id="projects"
-        >
-          <Projects />
-        </section>
+        <Suspense fallback={<div>Loading...</div>}>
+          <section
+            className="px-6 grid-fill-4812 relative flex justify-center w-screen pt-10 md:pt-20 xl:pt-40 pb-80 xl:pb-60 border-t border-solid border-opacity-10 border-blueColor"
+            id="projects"
+          >
+            <LazyLoadedProjects />
+          </section>
+        </Suspense>
         <section
           className="px-10 grid-4812 grid-fill-4812 place-items-center relative w-screen border-t border-solid pb-60 pt-20 sm:pb-40 md:pb-60 xl:pt-20 xl:pb-60 border-opacity-10 border-blueColor"
           id="contact"

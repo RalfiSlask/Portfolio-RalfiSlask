@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TypingIndicator = () => {
   return (
     <div className="typing-indicator ml-0 sm:ml-12">
