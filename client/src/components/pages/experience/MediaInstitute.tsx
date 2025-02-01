@@ -1,9 +1,9 @@
-import FrontendmentorImg from '../../../assets/images/frontendmentor.webp';
+import MediaInstitutetImg from '../../../assets/images/mediainstitutet.webp';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import TypeOfWork from './ui/TypeOfWork';
 
-const FrontendMentor = () => {
+const MediaInstitute = () => {
   const { ref, inView } = useInView({});
 
   useEffect(() => {}, [inView, ref]);
@@ -16,21 +16,22 @@ const FrontendMentor = () => {
           inView ? 'opacity-100 ' : 'opacity-0'
         } h-full work md:left-[60%] xl:left-[70%] md:-translate-x-1/2 top-[790px] md:top-[680px] xl:top-[650px]`}
       >
-        <div className="date">2022 - 2023</div>
+        <div className="date">2023 - 2025</div>
         <div className="px-4 flex justify-center overflow-hidden">
           <img
-            src={FrontendmentorImg}
-            alt="frontendmentor"
+            src={MediaInstitutetImg}
+            alt="mediainstitutet"
+            aria-label="mediainstitutet"
             className="bg-white w-full rounded-lg shadow-shadow-white-icon-hover"
             width="200"
             height="85"
             loading="lazy"
           />
         </div>
-        <TypeOfWork work="Self Study" />
+        <TypeOfWork work="Frontend Student" />
       </div>
     </>
   );
 };
 
-export default FrontendMentor;
+export default MediaInstitute;

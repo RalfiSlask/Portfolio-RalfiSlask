@@ -1,6 +1,6 @@
 import PokerContainer from './PokerContainer';
-import MediaInstitutet from './MediaInstitutet';
-import FrontendMentor from './FrontendMentor';
+import Cubeia from './Cubeia';
+import MediaInstitute from './MediaInstitute';
 import ResumeContainer from './ResumeContainer';
 
 const Experience = () => {
@@ -8,8 +8,8 @@ const Experience = () => {
     <div className="absolute w-[400px] sm:w-[500px] md:w-[1200px] max-w-[1200px] h-full">
       <div>
         <PokerContainer />
-        <FrontendMentor />
-        <MediaInstitutet />
+        <MediaInstitute />
+        <Cubeia />
         <ResumeContainer />
       </div>
     </div>

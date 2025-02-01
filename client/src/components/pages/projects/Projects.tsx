@@ -1,5 +1,4 @@
 import PageDescription from '../shared/PageDescription';
-import AudiophileContainer from './AudiophileContainer';
 import DevlinksContainer from './DevlinksContainer';
 import FeedbackContainer from './FeedbackContainer';
 import KanbanContainer from './KanbanContainer';
@@ -11,6 +10,7 @@ import { motion } from 'framer-motion';
 import { FadeInFromRight, FadeInFromRightDelayed, FadeInFromRightLast } from '../../../utils/motionvariants';
 import { useContext } from 'react';
 import { Context } from '../../../context/Context';
+import BipolarCompassContainer from './BipolarCompassContainer';
 
 const Projects = () => {
   const context = useContext(Context);
@@ -35,7 +35,7 @@ const Projects = () => {
               <>
                 {' '}
                 <h2 className="text-[1.5rem] text-center xl:text-left">Featured</h2>{' '}
-                <p className="text-blueColor uppercase text-[1.25rem]">Audiophile E-commerce</p>
+                <p className="text-blueColor uppercase text-[1.25rem]">BipolärKompassen</p>
               </>
             ) : (
               <>
@@ -43,16 +43,16 @@ const Projects = () => {
                   <h2 className="text-[1.5rem] text-center xl:text-left">Featured</h2>
                 </motion.div>
                 <motion.div variants={FadeInFromRightDelayed}>
-                  <p className="text-blueColor uppercase text-[1.25rem]">Audiophile E-commerce</p>
+                  <p className="text-blueColor uppercase text-[1.25rem]">BipolärKompassen</p>
                 </motion.div>
               </>
             )}
           </div>
           {isScreenSizeMobile ? (
-            <AudiophileContainer />
+            <BipolarCompassContainer />
           ) : (
             <motion.div variants={FadeInFromRightLast}>
-              <AudiophileContainer />
+              <BipolarCompassContainer />
             </motion.div>
           )}
         </motion.div>
