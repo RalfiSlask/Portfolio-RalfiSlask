@@ -1,11 +1,11 @@
-import ReactLogo from '../../../assets/icons/react.svg';
 import HtmlLogo from '../../../assets/icons/html.webp';
 import JavascriptLogo from '../../../assets/icons/javascript.svg';
+import NextLogo from '../../../assets/icons/nextjs.png';
+import ReactLogo from '../../../assets/icons/react.svg';
 import SassLogo from '../../../assets/icons/sass.svg';
-import VueLogo from '../../../assets/icons/vuejs.svg';
-import TypescriptLogo from '../../../assets/icons/typescript.svg';
 import TailwindLogo from '../../../assets/icons/tailwind.webp';
-import NextLogo from '../../../assets/icons/nextjs.jpg';
+import TypescriptLogo from '../../../assets/icons/typescript.svg';
+import VueLogo from '../../../assets/icons/vuejs.svg';
 
 const Frontend = () => {
   return (
@@ -17,7 +17,7 @@ const Frontend = () => {
         <img src={HtmlLogo} alt="html" width="25" height="25" loading="lazy" />
       </div>
       <div className="absolute left-0 bottom-10 translate-x-1/2 skills-icon-container">
-        <img src={NextLogo} alt="next" width="25" height="25" loading="lazy" />
+        <img src={NextLogo} alt="next" width="32" height="32" loading="lazy" />
       </div>
       <div className="absolute right-0 bottom-10 -translate-x-1/2 skills-icon-container">
         <img src={JavascriptLogo} alt="javascript" width="28" height="28" className="rounded-lg" loading="lazy" />

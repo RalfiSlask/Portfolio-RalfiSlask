@@ -1,9 +1,9 @@
-import MoviesImg from '../../../assets/images/movies.webp';
-import SkillsButtons from './SkillsButtons';
-import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
+import MoviesImg from '../../../assets/images/ml.png';
+import ProjectInfoContainer from './ProjectInfoContainer';
+import SkillsButtons from './SkillsButtons';
 
-const MoviesContainer = () => {
+const AIDeepfakeDetection = () => {
   const projectVariant: Variants = {
     offscreen: {
       y: 150,
@@ -21,15 +21,15 @@ const MoviesContainer = () => {
     },
   };
 
-  const skills = ['React'];
+  const skills = ['Python', 'Machine Learning'];
   const projectInfo = {
-    title: 'Entertainment app',
-    description: 'Filter and bookmark movies and tv-series in a dynamic way.',
+    title: 'AI Deepfake Detection',
+    description: 'Detect deepfake sounds by using machine learning, spectrum & metadata analysis.',
   };
 
   return (
     <a
-      href="https://ralfislask.github.io/Entertainment-Web-App/"
+      href="https://github.com/RalfiSlask/ML-Voice-deepfake-detection"
       target="_blank"
       className="w-full col-span-4 md:col-start-2 md:col-end-5 xl:col-span-4 h-full max-h-[450px]"
     >
@@ -63,4 +63,4 @@ const MoviesContainer = () => {
   );
 };
 
-export default MoviesContainer;
+export default AIDeepfakeDetection;

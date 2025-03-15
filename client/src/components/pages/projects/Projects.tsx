@@ -1,16 +1,16 @@
+import { motion } from 'framer-motion';
+import { useContext } from 'react';
+import { Context } from '../../../context/Context';
+import { FadeInFromRight, FadeInFromRightDelayed, FadeInFromRightLast } from '../../../utils/motionvariants';
 import PageDescription from '../shared/PageDescription';
+import AIDeepfakeDetection from './AIDeepfakeDetection';
+import BipolarCompassContainer from './BipolarCompassContainer';
 import DevlinksContainer from './DevlinksContainer';
 import FeedbackContainer from './FeedbackContainer';
 import KanbanContainer from './KanbanContainer';
 import MemoryContainer from './MemoryContainer';
-import MoviesContainer from './MoviesContainer';
 import SketchitContainer from './SketchitContainer';
 import WYSIWYGContainer from './WYSIWYGContainer';
-import { motion } from 'framer-motion';
-import { FadeInFromRight, FadeInFromRightDelayed, FadeInFromRightLast } from '../../../utils/motionvariants';
-import { useContext } from 'react';
-import { Context } from '../../../context/Context';
-import BipolarCompassContainer from './BipolarCompassContainer';
 
 const Projects = () => {
   const context = useContext(Context);
@@ -61,7 +61,7 @@ const Projects = () => {
       <div className="grid grid-cols-4 md:grid-cols-8 xl:grid-cols-12 gap-10 px-6 md:px-0">
         <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10 xl:gap-16 max-h-[2500px] ">
           <div className="xl:max-h-[500px] col-span-4  md:col-span-8 grid gap-10 grid-cols-4 sm:grid-cols-4 md:grid-cols-8">
-            <MoviesContainer />
+            <AIDeepfakeDetection />
             <FeedbackContainer />
           </div>
           <MemoryContainer />
