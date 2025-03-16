@@ -19,13 +19,15 @@ router.get('/reset', (req, res) => {
 router.post('/reset', async (req, res) => {
   try {
     const db = req.app.locals.db;
-    await db
-      .collection('AiBot')
-      .updateOne({ name: 'MatteBot' }, { $set: { conversation: '' } });
+    await db.collection('AiBot').updateOne(
+      { name: 'MatteBot' }, 
+      { $set: { conversation: '' } },
+      { upsert: true }
+    );
     res.json({ success: true, message: 'Conversation reset successfully' });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ err: 'Failed to reset conversation' });
+    res.status(500).json({ error: 'Failed to reset conversation' });
   }
 });
 

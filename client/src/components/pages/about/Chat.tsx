@@ -47,6 +47,25 @@ const Chat = () => {
     scrollToBottom();
   }, [conversationHistory, typing, displayedAnswer]);
 
+  useEffect(() => {
+    const resetConversation = async () => {
+      try {
+        const response = await fetch('https://server-2tab5.ondigitalocean.app/chat/reset', {
+          method: 'POST'
+        });
+        if (response.ok) {
+          setConversationHistory([]);
+          setAnswer('');
+          setDisplayedAnswer('');
+        }
+      } catch (err) {
+        console.error('Failed to reset conversation:', err);
+      }
+    };
+
+    resetConversation();
+  }, []);
+
   const handleMessageOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setMessage(e.target.value);
   };
