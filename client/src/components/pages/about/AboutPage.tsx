@@ -1,11 +1,11 @@
+import { motion } from 'framer-motion';
 import { useContext } from 'react';
+import { Context } from '../../../context/Context';
+import { chatSpotifyVariant, LargeTextVariant, MediumTextVariant } from '../../../utils/motionvariants';
 import Chat from './Chat';
 import SpotifySection from './SpotifySection';
-import { motion } from 'framer-motion';
-import AboutMeHeading from './ui/AboutMeHeading';
 import AboutMeDescription from './ui/AboutMeDescription';
-import { chatSpotifyVariant, LargeTextVariant, MediumTextVariant } from '../../../utils/motionvariants';
-import { Context } from '../../../context/Context';
+import AboutMeHeading from './ui/AboutMeHeading';
 
 const AboutPage = () => {
   const context = useContext(Context);
@@ -15,7 +15,7 @@ const AboutPage = () => {
   const { isScreenSizeMobile } = context;
 
   return (
-    <div className="grid-fill-4812 px-6 flex flex-col gap-20 w-full relative items-center text-white">
+    <div className="grid-fill-4812 sm:px-6 flex flex-col gap-20 w-full relative items-center text-white">
       <div className="grid-4812 max-w-[1200px] flex flex-col gap-10 w-full items-center xl:items-start">
         <motion.div
           initial="offscreen"

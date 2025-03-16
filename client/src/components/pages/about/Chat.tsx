@@ -120,27 +120,23 @@ const Chat = () => {
                    overflow-y-auto bg-secondaryBG scrollbar-thin scrollbar-thumb-primary/20 
                    scrollbar-track-transparent hover:scrollbar-thumb-primary/30"
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 text-xs sm:text-sm">
             {conversationHistory.map((msg, index) => (
               <div 
                 key={index} 
                 className={`flex gap-2 sm:gap-4 items-start ${msg.role === 'user' ? 'flex-row-reverse ml-auto' : ''}`}
               >
                 <div 
-                  className={`rounded-full flex items-center justify-center ${
-                    msg.role === 'user' 
-                      ? 'bg-primaryBG min-w-8 min-h-8 max-h-8 max-w-8 mt-1' 
-                      : 'bg-primaryBG min-w-8 min-h-8 max-h-8 max-w-8'
-                  }`}
+                  className="rounded-full flex items-center justify-center bg-primaryBG min-w-8 min-h-8 max-h-8 max-w-8"
                 >
                   {msg.role === 'user' ? (
-                    <BiUser className="text-base sm:text-lg text-white" />
+                    <BiUser className="text-xs sm:text-sm text-white" />
                   ) : (
                     <img src={MatteIcon} alt="Matte icon" className="w-5 h-5 sm:w-6 sm:h-6" />
                   )}
                 </div>
                 <p 
-                  className={`text-sm sm:text-base pt-1 ${
+                  className={`text-xs sm:text-sm pt-1 ${
                     msg.role === 'user' 
                       ? 'text-right ml-auto' 
                       : 'text-left mr-auto'

@@ -1,20 +1,18 @@
-import Header from './components/Header';
-import LandingIntro from './components/pages/landing/LandingIntro';
-import AboutPage from './components/pages/about/AboutPage';
-import Copyright from './components/pages/contact/ui/Copyright';
-import BuiltWith from './components/pages/contact/ui/BuiltWith';
-import Projects from './components/pages/projects/Projects';
-import ArrowDownLogo from './assets/icons/arrowdown.svg';
-import ContactPage from './components/pages/contact/ContactPage';
-import Background from './assets/images/bg3.jpg';
-import LineDrawing from './components/LineDrawing';
-import { ParallaxBanner } from 'react-scroll-parallax';
-import Experience from './components/pages/experience/Experience';
-import SkillsPage from './components/pages/skills/SkillsPage';
-import SEO from './SEO';
-import LottieAnimation from './LottieAnimation';
 import React, { Suspense, useContext } from 'react';
+import { ParallaxBanner } from 'react-scroll-parallax';
+import ArrowDownLogo from './assets/icons/arrowdown.svg';
+import Background from './assets/images/bg3.jpg';
+import Header from './components/Header';
+import LineDrawing from './components/LineDrawing';
+import ContactPage from './components/pages/contact/ContactPage';
+import BuiltWith from './components/pages/contact/ui/BuiltWith';
+import Copyright from './components/pages/contact/ui/Copyright';
+import Experience from './components/pages/experience/Experience';
+import LandingIntro from './components/pages/landing/LandingIntro';
+import SkillsPage from './components/pages/skills/SkillsPage';
 import { Context } from './context/Context';
+import LottieAnimation from './LottieAnimation';
+import SEO from './SEO';
 
 const LazyLoadedAbout = React.lazy(() => import('./components/pages/about/AboutPage'));
 const LazyLoadedExperience = React.lazy(() => import('./components/pages/experience/Experience'));
@@ -34,7 +32,7 @@ function App() {
       <Header />
       <main className="w-full h-full grid-4812">
         <section
-          className="pt-40 grid-4812 pb-40 px-6 min-h-screen w-screen gap-20 relative place-items-center"
+          className="pt-40 grid-4812 pb-40 px-2 sm:px-6 min-h-screen w-screen gap-20 relative place-items-center"
           id="landing"
         >
           <div className="rounded-[25px] col-span-4 md:col-start-2 md:col-end-8 mx:max-w-[500px] place-items-center xl:justify-between xl:col-span-12 grid-4812 w-full shadow-shadow-medium gap-4 z-30 xl:max-w-[1200px]">
