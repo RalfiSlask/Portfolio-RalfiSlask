@@ -104,11 +104,14 @@ const Header = () => {
       <header
         className={`bg-secondaryBG shadow-shadow-phone md:shadow-none md:bg-transparent z-50 header fixed px-12 w-screen h-24 flex justify-between items-center`}
       >
-        <div
-          className={`${isVisible ? 'left-[15px]' : 'left-[-100px]'} transition-right duration-700 fixed flex gap-4`}
+        <a
+          href="#landing"
+          className={`${
+            isVisible ? 'left-[15px]' : 'left-[-100px]'
+          } transition-right duration-700 fixed flex gap-4 cursor-pointer`}
         >
           <img src={MatteLogo} alt="matte logo" width="100" height="100" />
-        </div>
+        </a>
         {isScreenSizeMobile && <SocialMediaIconsMobile />}
         {isScreenSizeMobile && (
           <div className="fixed right-[15px] w-[100px] h-[100px] flex justify-center items-center">
