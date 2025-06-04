@@ -1,13 +1,15 @@
-import { useState } from 'react';
-import Frontend from './Frontend';
-import Backend from './Backend';
-import PrevArrow from '../../../assets/icons/prev.svg';
-import NextArrow from '../../../assets/icons/next.svg';
-import Tools from './Tools';
 import { motion } from 'framer-motion';
-import { TechnicalSkillsVariant } from '../../../utils/motionvariants';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import NextArrow from '../../../assets/icons/next.svg';
+import PrevArrow from '../../../assets/icons/prev.svg';
 import { Context } from '../../../context/Context';
+import { TechnicalSkillsVariant } from '../../../utils/motionvariants';
+import Backend from './Backend';
+import CMS from './CMS';
+import Frontend from './Frontend';
+import StateManagment from './StateManagment';
+import Testing from './Testing';
+import Tools from './Tools';
 
 const TechnicalSkills = () => {
   const context = useContext(Context);
@@ -20,9 +22,9 @@ const TechnicalSkills = () => {
 
   const increaseCount = () => {
     setSkillIndex(prev => {
-      if (prev <= 1) {
+      if (prev < 5) {
         return prev + 1;
-      } else if (prev === 2) {
+      } else if (prev === 5) {
         return 0;
       }
       return prev;
@@ -31,10 +33,10 @@ const TechnicalSkills = () => {
 
   const decreaseCount = () => {
     setSkillIndex(prev => {
-      if (prev >= 1) {
+      if (prev > 0) {
         return prev - 1;
       } else if (prev === 0) {
-        return 2;
+        return 5;
       }
       return prev;
     });
@@ -46,7 +48,7 @@ const TechnicalSkills = () => {
         <div className="col-span-4 md:col-span-8 xl:col-span-7 flex justify-center relative items-center h-[700px] md:h-[650px] max-h-[500px] sm:max-w-[500px] md:max-w-[700px] w-full">
           <div className="w-full h-full">
             <article className="flex justify-center relative items-center gap-10 h-full max-h-[500px] max-w-[500px] md:max-w-[700px] w-full sm:col-span-4 xl:col-span-7 shadow-shadow-medium p-6 rounded-[25px]">
-              <div className="max-w-[300px] h-[300px] sm:max-w-[400px] sm:h-[400px] w-full border border-solid border-secondaryBG rounded-full relative">
+              <div className="max-w-[300px] h-[300px] sm:max-w-[400px] sm:h-[400px] w-full border border-solid border-secondaryBG rounded-full relative overflow-visible">
                 <div className={`transition-opacity duration-300 ${skillIndex === 0 ? 'opacity-100' : 'opacity-0'}`}>
                   <Frontend />
                 </div>
@@ -55,6 +57,15 @@ const TechnicalSkills = () => {
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 2 ? 'opacity-100' : 'opacity-0'}`}>
                   <Tools />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 3 ? 'opacity-100' : 'opacity-0'}`}>
+                  <Testing />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 4 ? 'opacity-100' : 'opacity-0'}`}>
+                  <CMS />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 5 ? 'opacity-100' : 'opacity-0'}`}>
+                  <StateManagment />
                 </div>
               </div>
 
@@ -88,6 +99,33 @@ const TechnicalSkills = () => {
                     Tools
                   </h2>
                 )}
+                {skillIndex === 3 && (
+                  <h2
+                    className={`${
+                      skillIndex === 3 ? 'opacity-100' : ''
+                    } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
+                  >
+                    Testing
+                  </h2>
+                )}
+                {skillIndex === 4 && (
+                  <h2
+                    className={`${
+                      skillIndex === 4 ? 'opacity-100' : ''
+                    } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
+                  >
+                    CMS
+                  </h2>
+                )}
+                {skillIndex === 5 && (
+                  <h2
+                    className={`${
+                      skillIndex === 5 ? 'opacity-100' : ''
+                    } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
+                  >
+                    State
+                  </h2>
+                )}
               </div>
 
               <button
@@ -115,7 +153,7 @@ const TechnicalSkills = () => {
         >
           <motion.div variants={TechnicalSkillsVariant} className="w-full h-full">
             <article className="flex justify-center relative items-center gap-10 h-full max-h-[500px] max-w-[500px] md:max-w-[700px] w-full sm:col-span-4 xl:col-span-7 shadow-shadow-medium p-6 rounded-[25px]">
-              <div className="max-w-[400px] h-[400px] w-full border border-solid border-secondaryBG rounded-full relative">
+              <div className="max-w-[400px] h-[400px] w-full border border-solid border-secondaryBG rounded-full relative overflow-visible">
                 <div className={`transition-opacity duration-300 ${skillIndex === 0 ? 'opacity-100' : 'opacity-0'}`}>
                   <Frontend />
                 </div>
@@ -124,6 +162,15 @@ const TechnicalSkills = () => {
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 2 ? 'opacity-100' : 'opacity-0'}`}>
                   <Tools />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 3 ? 'opacity-100' : 'opacity-0'}`}>
+                  <Testing />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 4 ? 'opacity-100' : 'opacity-0'}`}>
+                  <CMS />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 5 ? 'opacity-100' : 'opacity-0'}`}>
+                  <StateManagment />
                 </div>
               </div>
 
@@ -138,6 +185,15 @@ const TechnicalSkills = () => {
                 )}
                 {skillIndex === 2 && (
                   <h2 className={`${skillIndex === 2 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Tools</h2>
+                )}
+                {skillIndex === 3 && (
+                  <h2 className={`${skillIndex === 3 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Testing</h2>
+                )}
+                {skillIndex === 4 && (
+                  <h2 className={`${skillIndex === 4 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>CMS</h2>
+                )}
+                {skillIndex === 5 && (
+                  <h2 className={`${skillIndex === 5 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>State</h2>
                 )}
               </div>
 

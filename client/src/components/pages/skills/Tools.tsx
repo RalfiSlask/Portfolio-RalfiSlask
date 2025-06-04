@@ -1,37 +1,56 @@
-import FigmaLogo from '../../../assets/icons/figma.svg';
-import GitLogo from '../../../assets/icons/git.svg';
-import ViteLogo from '../../../assets/icons/vite.svg';
-import DigitalOceanLogo from '../../../assets/icons/digitalocean.webp';
+import AWSLogo from '../../../assets/icons/tools/aws.webp';
+import DigitalOceanLogo from '../../../assets/icons/tools/digitalocean.webp';
+import FigmaLogo from '../../../assets/icons/tools/figma.svg';
+import GitLogo from '../../../assets/icons/tools/git.svg';
+import KubernetesLogo from '../../../assets/icons/tools/kubernetes.png';
+import ViteLogo from '../../../assets/icons/tools/vite.svg';
+
+const tooltips = [
+  { name: 'Figma', logo: FigmaLogo, className: 'absolute left-[0] top-10 translate-x-1/2 skills-icon-container' },
+  { name: 'Git', logo: GitLogo, className: 'absolute right-0 top-10 -translate-x-1/2 skills-icon-container' },
+  {
+    name: 'Kubernetes',
+    logo: KubernetesLogo,
+    className: 'absolute left-0 bottom-10 translate-x-1/2 skills-icon-container',
+  },
+  {
+    name: 'AWS',
+    logo: AWSLogo,
+    className: 'absolute right-0 bottom-10 -translate-x-1/2 skills-icon-container rounded-full',
+  },
+  {
+    name: 'Vite',
+    logo: ViteLogo,
+    className: 'absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 skills-icon-container',
+  },
+  {
+    name: 'DigitalOcean',
+    logo: DigitalOceanLogo,
+    className: 'absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 skills-icon-container',
+  },
+];
 
 const Tools = () => {
   return (
     <>
-      <div className="absolute -translate-x-1/2 top-1/2 -translate-y-1/2 left-0 skills-icon-container">
-        <img
-          src={FigmaLogo}
-          alt="figma logo"
-          width="30"
-          height="30"
-          className="object-cover w-[16px] h-[32px]"
-          loading="lazy"
-        />
-      </div>
-      <div className="absolute translate-x-1/2 top-1/2 -translate-y-1/2 right-0 skills-icon-container">
-        <img src={GitLogo} alt="git logo" width="30" height="30" loading="lazy" />
-      </div>
-      <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 skills-icon-container">
-        <img
-          src={ViteLogo}
-          alt="vite logo"
-          width="30"
-          height="30"
-          className="object-cover w-[24px] h-[30px]"
-          loading="lazy"
-        />
-      </div>
-      <div className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 skills-icon-container">
-        <img src={DigitalOceanLogo} alt="digital ocean logo" width="30" height="30" loading="lazy" />
-      </div>
+      {tooltips.map((tool, idx) => (
+        <div key={tool.name} className={tool.className + ' group flex flex-col items-center'}>
+          <img
+            src={tool.logo}
+            alt={tool.name + ' logo'}
+            width="30"
+            height="30"
+            loading="lazy"
+            className={tool.name === 'AWS' ? 'rounded-full' : ''}
+          />
+          <span
+            className="pointer-events-none opacity-0 group-hover:opacity-100 group-hover:translate-y-0 -translate-y-2 transition-all duration-200 bg-gray-800 text-white text-xs rounded px-2 py-1 mt-2 shadow-lg z-10 whitespace-nowrap"
+            style={{ position: 'absolute', top: '-2.2rem' }}
+          >
+            {tool.name}
+          </span>
+        </div>
+      ))}
     </>
   );
 };

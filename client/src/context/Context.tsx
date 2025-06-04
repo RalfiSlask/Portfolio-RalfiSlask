@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState, useEffect } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
 type ContextProps = {
   isScreenSizeMobile: boolean;
@@ -29,10 +29,6 @@ export const ContextProvider: React.FC<ChildProps> = ({ children }) => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  useEffect(() => {
-    console.log(isScreenSizeMobile);
-  }, [isScreenSizeMobile]);
 
   const contextValue = {
     isScreenSizeMobile: isScreenSizeMobile,
