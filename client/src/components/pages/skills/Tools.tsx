@@ -34,7 +34,7 @@ const Tools = () => {
   return (
     <>
       {tooltips.map((tool, idx) => (
-        <div key={tool.name} className={tool.className + ' group flex flex-col items-center'}>
+        <div key={tool.name} className={tool.className + ' group flex flex-col items-center z-50'}>
           <img
             src={tool.logo}
             alt={tool.name + ' logo'}
