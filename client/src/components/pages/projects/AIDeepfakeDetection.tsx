@@ -31,7 +31,7 @@ const AIDeepfakeDetection = () => {
     <a
       href="https://github.com/RalfiSlask/ML-Voice-deepfake-detection"
       target="_blank"
-      className="w-full col-span-4 md:col-start-2 md:col-end-5 xl:col-span-4 h-full max-h-[450px]"
+      className="w-full col-span-4 md:col-start-2 md:col-end-5 xl:col-span-4 h-full"
     >
       <motion.div
         initial="offscreen"
@@ -41,7 +41,7 @@ const AIDeepfakeDetection = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.div className="card" variants={projectVariant}>
-          <div className="bg-primaryBG p-10 shadow-shadow-medium md:max-h-[450px] max-h-[700px] xl:max-h-[450px] group rounded-[25px] cursor-pointer flex flex-col gap-6">
+          <div className="bg-primaryBG p-10 shadow-shadow-medium md:max-h-[550px] max-h-[700px] xl:max-h-[450px] group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl min-h-[180px]">
               <img
                 src={MoviesImg}

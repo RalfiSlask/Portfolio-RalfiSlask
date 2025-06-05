@@ -1,7 +1,7 @@
-import DevlinksImg from '../../../assets/images/devlinks.webp';
-import SkillsButtons from './SkillsButtons';
-import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
+import DevlinksImg from '../../../assets/images/devlinks.webp';
+import ProjectInfoContainer from './ProjectInfoContainer';
+import SkillsButtons from './SkillsButtons';
 
 const DevlinksContainer = () => {
   const skills = ['Styled Components', 'React'];
@@ -41,7 +41,7 @@ const DevlinksContainer = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.div variants={projectVariant}>
-          <div className="bg-primaryBG p-10 shadow-shadow-medium w-full max-h-[450px] xl:max-w-[450px] group rounded-[25px] cursor-pointer flex flex-col gap-6">
+          <div className="bg-primaryBG p-10 shadow-shadow-medium w-full max-h-[550px] xl:max-w-[450px] group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl min-h-[180px] w-full">
               <img
                 src={DevlinksImg}

@@ -1,8 +1,8 @@
-import SketchItImg from '../../../assets/images/sketchit.webp';
-import SkillsButtons from './SkillsButtons';
-import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion } from 'framer-motion';
+import SketchItImg from '../../../assets/images/sketchit.webp';
 import { projectVariant } from '../../../utils/motionvariants';
+import ProjectInfoContainer from './ProjectInfoContainer';
+import SkillsButtons from './SkillsButtons';
 
 const SketchitContainer = () => {
   const skills = ['Typescript', 'Socket.io', 'Express', 'MongoDB', 'Sass'];
@@ -20,7 +20,7 @@ const SketchitContainer = () => {
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <motion.div variants={projectVariant}>
           <div className="bg-primaryBG p-10 shadow-shadow-medium w-full xl:max-h-[450px] group rounded-[25px] overflow-y-hidden cursor-pointer flex flex-col xl:flex-row gap-6">
-            <div className="relative overflow-hidden rounded-xl w-full min-h-[180px]">
+            <div className="relative overflow-hidden rounded-xl w-full min-h-[180px]  lg:max-h-none">
               <img
                 src={SketchItImg}
                 alt="memory"

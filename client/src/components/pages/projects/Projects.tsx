@@ -59,7 +59,7 @@ const Projects = () => {
       </div>
 
       <div className="grid grid-cols-4 md:grid-cols-8 xl:grid-cols-12 gap-10 px-6 md:px-0">
-        <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10 xl:gap-16 max-h-[2500px] ">
+        <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10 xl:gap-16">
           <div className="xl:max-h-[500px] col-span-4  md:col-span-8 grid gap-10 grid-cols-4 sm:grid-cols-4 md:grid-cols-8">
             <AIDeepfakeDetection />
             <FeedbackContainer />

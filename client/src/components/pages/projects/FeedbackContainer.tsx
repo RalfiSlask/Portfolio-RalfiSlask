@@ -1,7 +1,7 @@
-import FeedbackImg from '../../../assets/images/feedback.webp';
-import SkillsButtons from './SkillsButtons';
-import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
+import FeedbackImg from '../../../assets/images/feedback.webp';
+import ProjectInfoContainer from './ProjectInfoContainer';
+import SkillsButtons from './SkillsButtons';
 
 const FeedbackContainer = () => {
   const projectVariant: Variants = {
@@ -42,7 +42,7 @@ const FeedbackContainer = () => {
         className="h-full"
       >
         <motion.div variants={projectVariant}>
-          <div className="bg-primaryBG p-10 shadow-shadow-medium max-h-[800px] md:max-h-[450px] w-full h-full col-span-4 group rounded-[25px] cursor-pointer flex flex-col gap-6">
+          <div className="bg-primaryBG p-10 shadow-shadow-medium max-h-[800px] md:max-h-[550px] w-full h-full col-span-4 group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl w-full min-h-[180px]">
               <img
                 src={FeedbackImg}
