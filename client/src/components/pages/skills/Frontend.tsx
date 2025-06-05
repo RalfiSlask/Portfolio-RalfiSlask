@@ -1,15 +1,15 @@
-import HtmlLogo from '../../../assets/icons/html.webp';
 import JavascriptLogo from '../../../assets/icons/javascript.svg';
 import NextLogo from '../../../assets/icons/nextjs.png';
 import ReactLogo from '../../../assets/icons/react.svg';
 import SassLogo from '../../../assets/icons/sass.svg';
+import SvelteLogo from '../../../assets/icons/svelte.png';
 import TailwindLogo from '../../../assets/icons/tailwind.webp';
 import TypescriptLogo from '../../../assets/icons/typescript.svg';
 import VueLogo from '../../../assets/icons/vuejs.svg';
 
 const frontendIcons = [
   { name: 'React', logo: ReactLogo, className: 'absolute left-[0] top-10 translate-x-1/2 skills-icon-container' },
-  { name: 'HTML', logo: HtmlLogo, className: 'absolute right-0 top-10 -translate-x-1/2 skills-icon-container' },
+  { name: 'Svelte', logo: SvelteLogo, className: 'absolute right-0 top-10 -translate-x-1/2 skills-icon-container' },
   { name: 'Next.js', logo: NextLogo, className: 'absolute left-0 bottom-10 translate-x-1/2 skills-icon-container' },
   {
     name: 'JavaScript',
