@@ -36,7 +36,7 @@ const WYSIWYGContainer = () => {
     >
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <motion.div variants={projectVariant}>
-          <div className="bg-primaryBG p-10 shadow-shadow-medium max-[550px] md:max-h-[450px] w-full col-span-4 group rounded-[25px] cursor-pointer flex flex-col gap-6">
+          <div className="bg-primaryBG p-4 sm:p-10 shadow-shadow-medium max-[550px] md:max-h-[450px] w-full col-span-4 group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl w-full">
               <img
                 src={WYSIWYGImg}

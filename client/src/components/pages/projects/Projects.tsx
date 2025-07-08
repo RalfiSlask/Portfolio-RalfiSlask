@@ -20,8 +20,8 @@ const Projects = () => {
   const { isScreenSizeMobile } = context;
 
   return (
-    <div className="max-w-[1200px] w-full flex flex-col items-center gap-20 ">
-      <div className="w-full grid-4812 flex-col gap-20 xl:gap-0 place-items-center">
+    <div className="max-w-[1200px] w-full flex flex-col items-center gap-10 sm:gap-20 ">
+      <div className="w-full grid-4812 flex-col gap-10 sm:gap-20 xl:gap-0 place-items-center">
         <PageDescription title={'My Work'} />
         <motion.div
           initial="offscreen"
@@ -58,7 +58,7 @@ const Projects = () => {
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-4 md:grid-cols-8 xl:grid-cols-12 gap-10 px-6 md:px-0">
+      <div className="grid grid-cols-4 md:grid-cols-8 xl:grid-cols-12 gap-10 md:px-0">
         <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10 xl:gap-16">
           <div className="xl:max-h-[500px] col-span-4  md:col-span-8 grid gap-10 grid-cols-4 sm:grid-cols-4 md:grid-cols-8">
             <AIDeepfakeDetection />

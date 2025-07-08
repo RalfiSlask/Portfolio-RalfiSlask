@@ -15,7 +15,7 @@ const SkillsPage = () => {
   const { isScreenSizeMobile } = context;
 
   return (
-    <div className="min-h-[800px] grid-4812 w-full relative pt-40 max-w-[1200px] gap-y-10 md:gap-20 place-items-center ">
+    <div className="min-h-[800px] grid-4812 w-full relative pt-10 sm:pt-40 max-w-[1200px] gap-y-10 md:gap-20 place-items-center ">
       {isScreenSizeMobile && (
         <div className="col-span-4 md:col-span-8 xl:col-span-4">
           <div className="col-span-4 relative flex flex-col gap-10 w-full sm:w-max-[500px] md:w-max-[700px] xl:w-max-[400px]">
@@ -26,7 +26,7 @@ const SkillsPage = () => {
               alt="brain"
               width="300"
               loading="lazy"
-              className="absolute left-1/2 -translate-x-1/2 bottom-[-850px] xl:bottom-[-250px] opacity-50"
+              className="absolute left-1/2 -translate-x-1/2 bottom-[-750px] xl:bottom-[-250px] opacity-50"
             />
           </div>
         </div>

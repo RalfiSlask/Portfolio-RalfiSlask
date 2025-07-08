@@ -43,7 +43,7 @@ const MemoryContainer = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.div variants={projectVariant}>
-          <div className="bg-primaryBG p-10 xl:max-h-[800px] shadow-shadow-medium w-full group rounded-[25px] cursor-pointer flex flex-col gap-6">
+          <div className="bg-primaryBG p-4 sm:p-10 xl:max-h-[800px] shadow-shadow-medium w-full group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl w-full xl:w-[700px] xl:h-[500px]">
               <img
                 src={MemoryImg}

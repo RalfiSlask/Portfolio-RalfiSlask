@@ -19,7 +19,7 @@ const SketchitContainer = () => {
     >
       <motion.div initial="offscreen" whileInView={'onscreen'} viewport={{ once: true }} transition={{ duration: 0.5 }}>
         <motion.div variants={projectVariant}>
-          <div className="bg-primaryBG p-10 shadow-shadow-medium w-full xl:max-h-[450px] group rounded-[25px] overflow-y-hidden cursor-pointer flex flex-col xl:flex-row gap-6">
+          <div className="bg-primaryBG p-4 sm:p-10 shadow-shadow-medium w-full xl:max-h-[450px] group rounded-[25px] overflow-y-hidden cursor-pointer flex flex-col xl:flex-row gap-6">
             <div className="relative overflow-hidden rounded-xl w-full min-h-[180px]  lg:max-h-none">
               <img
                 src={SketchItImg}

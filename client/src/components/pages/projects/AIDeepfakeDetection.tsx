@@ -41,7 +41,7 @@ const AIDeepfakeDetection = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.div className="card" variants={projectVariant}>
-          <div className="bg-primaryBG p-10 shadow-shadow-medium md:max-h-[550px] max-h-[700px] xl:max-h-[450px] group rounded-[25px] cursor-pointer flex flex-col gap-6">
+          <div className="bg-primaryBG p-4 sm:p-10 shadow-shadow-medium md:max-h-[550px] max-h-[700px] xl:max-h-[450px] group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl min-h-[180px]">
               <img
                 src={MoviesImg}

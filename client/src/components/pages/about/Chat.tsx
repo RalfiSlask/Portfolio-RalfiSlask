@@ -22,7 +22,7 @@ const Chat = () => {
       const { scrollHeight, clientHeight } = chatContainerRef.current;
       chatContainerRef.current.scrollTo({
         top: scrollHeight - clientHeight,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
@@ -51,7 +51,7 @@ const Chat = () => {
     const resetConversation = async () => {
       try {
         const response = await fetch('https://server-2tab5.ondigitalocean.app/chat/reset', {
-          method: 'POST'
+          method: 'POST',
         });
         if (response.ok) {
           setConversationHistory([]);
@@ -77,7 +77,7 @@ const Chat = () => {
     const userMessage = { role: 'user' as const, content: message };
     setConversationHistory(prev => [...prev, userMessage]);
     setMessage('');
-    
+
     try {
       setTyping(true);
       const response = await fetch('https://server-2tab5.ondigitalocean.app/chat/send', {
@@ -85,9 +85,9 @@ const Chat = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           message: userMessage.content,
-          context: conversationHistory 
+          context: conversationHistory,
         }),
       });
 
@@ -97,11 +97,14 @@ const Chat = () => {
       }
 
       const data = await response.json();
-      
-      setConversationHistory(prev => [...prev, {
-        role: 'system' as const,
-        content: data.message
-      }]);
+
+      setConversationHistory(prev => [
+        ...prev,
+        {
+          role: 'system' as const,
+          content: data.message,
+        },
+      ]);
 
       setAnswer(data.message);
       setTyping(false);
@@ -126,14 +129,14 @@ const Chat = () => {
   }, [answer]);
 
   return (
-    <div className="flex-col items-center md:items-start flex xl:flex-row w-full gap-8 justify-end shadow-shadow-medium p-6 min-h-[500px] rounded-[25px] h-full">
+    <div className="flex-col items-center md:items-start flex xl:flex-row w-full gap-8 justify-end shadow-shadow-medium p-4 sm:p-6 min-h-[500px] rounded-[25px] h-full">
       <div className="w-full xl:w-[230px] h-full flex-col-reverse flex xl:flex-col justify-between items-center">
         <ChatDescription />
         <img src={MatteLogo} width="180" height="290" alt="Matthias" className="object-cover" loading="lazy" />
       </div>
-      
+
       <div className="flex flex-col gap-10 md:justify-between w-full h-full xl:max-w-[375px]">
-        <div 
+        <div
           ref={chatContainerRef}
           className="h-[375px] w-full shadow-shadow-input rounded-[10px] pl-4 sm:pl-6 py-6 pr-4 sm:pr-6 
                    overflow-y-auto bg-secondaryBG scrollbar-thin scrollbar-thumb-primary/20 
@@ -141,29 +144,23 @@ const Chat = () => {
         >
           <div className="flex flex-col gap-4 text-xs sm:text-sm">
             {conversationHistory.map((msg, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`flex gap-2 sm:gap-4 items-start ${msg.role === 'user' ? 'flex-row-reverse ml-auto' : ''}`}
               >
-                <div 
-                  className="rounded-full flex items-center justify-center bg-primaryBG min-w-8 min-h-8 max-h-8 max-w-8"
-                >
+                <div className="rounded-full flex items-center justify-center bg-primaryBG min-w-8 min-h-8 max-h-8 max-w-8">
                   {msg.role === 'user' ? (
                     <BiUser className="text-xs sm:text-sm text-white" />
                   ) : (
                     <img src={MatteIcon} alt="Matte icon" className="w-5 h-5 sm:w-6 sm:h-6" />
                   )}
                 </div>
-                <p 
+                <p
                   className={`text-xs sm:text-sm pt-1 ${
-                    msg.role === 'user' 
-                      ? 'text-right ml-auto' 
-                      : 'text-left mr-auto'
+                    msg.role === 'user' ? 'text-right ml-auto' : 'text-left mr-auto'
                   }`}
                 >
-                  {index === conversationHistory.length - 1 && 
-                   msg.role === 'system' && 
-                   answer !== '' 
+                  {index === conversationHistory.length - 1 && msg.role === 'system' && answer !== ''
                     ? displayedAnswer
                     : msg.content}
                 </p>
@@ -174,10 +171,7 @@ const Chat = () => {
           </div>
         </div>
 
-        <form 
-          className="flex flex-col sm:flex-row items-center gap-4 w-full" 
-          onSubmit={handleClickAndSendChatMessage}
-        >
+        <form className="flex flex-col sm:flex-row items-center gap-4 w-full" onSubmit={handleClickAndSendChatMessage}>
           <input
             onChange={handleMessageOnChange}
             type="text"
@@ -189,7 +183,7 @@ const Chat = () => {
             placeholder="Message Matthias..."
             value={message}
           />
-          <button 
+          <button
             className="icon-container bg-primaryBG hover:bg-primary text-white 
                      cursor-pointer transition-all duration-300 ease outline-none 
                      rounded-full p-2.5 sm:p-3 shadow-md hover:shadow-lg 
