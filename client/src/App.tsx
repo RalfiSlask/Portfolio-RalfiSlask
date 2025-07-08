@@ -68,7 +68,7 @@ function App() {
           )}
         </section>
 
-        <section className="grid-fill-4812 px-4 sm:px-6 relative flex w-screen justify-center pt-10 md:pt-20 xl:pt-40 pb-60 xl:pb-60 bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
+        <section className="grid-fill-4812 px-4 sm:px-6 relative flex w-screen justify-center pt-10 sm:pt-20 xl:pt-40 pb-10 sm:pb-20 xl:pb-40 bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
           <SkillsPage />
         </section>
         <Suspense fallback={<div>Loading...</div>}>
