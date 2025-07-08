@@ -5,7 +5,7 @@ import ResumeContainer from './ResumeContainer';
 
 const Experience = () => {
   return (
-    <div className="absolute w-[400px] sm:w-[500px] md:w-[1200px] max-w-[1200px] h-full">
+    <div className="absolute max-w-[400px] sm:w-[500px] md:w-[1200px] sm:max-w-[1200px] h-full">
       <div>
         <MediaInstitute />
         <DigitalIsland />

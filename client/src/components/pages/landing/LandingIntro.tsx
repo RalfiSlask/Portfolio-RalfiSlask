@@ -3,7 +3,7 @@ import IntroHeading from './IntroHeading';
 
 const LandingIntro = () => {
   return (
-    <div className="col-span-4 md:col-span-8 xl:col-span-7 flex flex-col p-6 gap-8 xl:gap-4 h-full w-full ">
+    <div className="col-span-4 md:col-span-8 xl:col-span-7 flex flex-col p-4 sm:p-6 gap-8 xl:gap-4 h-full w-full ">
       <div className="flex flex-col gap-8 ">
         <IntroHeading />
         <h2 className="text-center xl:text-start text-[1rem] sm:text-[1.25rem] md:text-[2rem] xl:text-[2.5rem]">

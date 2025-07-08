@@ -24,7 +24,7 @@ const PageDescription: React.FC<IPageInfo> = ({ title }) => {
       className="col-span-4 md:col-span-8 xl:col-span-6 w-full flex flex-col items-center gap-10 xl:items-start xl:flex-col xl:gap-10 h-full"
     >
       {isScreenSizeMobile ? (
-        <h2 className="text-[2.5rem] md:text-[3rem] xl:text-[4rem] font-medium w-[400px] xl:w-[250px] text-center xl:text-left">
+        <h2 className="text-[2.5rem] md:text-[3rem] xl:text-[4rem] font-medium w-[300px] xl:w-[250px] text-center xl:text-left">
           {title} <span className="text-blueColor">.</span>
         </h2>
       ) : (
