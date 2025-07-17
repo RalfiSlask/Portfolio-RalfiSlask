@@ -6,8 +6,10 @@ import { Context } from '../../../context/Context';
 import { TechnicalSkillsVariant } from '../../../utils/motionvariants';
 import Backend from './Backend';
 import CMS from './CMS';
+import Databases from './Databases';
 import Frontend from './Frontend';
 import StateManagment from './StateManagment';
+import Styling from './Styling';
 import Testing from './Testing';
 import Tools from './Tools';
 
@@ -22,9 +24,9 @@ const TechnicalSkills = () => {
 
   const increaseCount = () => {
     setSkillIndex(prev => {
-      if (prev < 5) {
+      if (prev < 7) {
         return prev + 1;
-      } else if (prev === 5) {
+      } else if (prev === 7) {
         return 0;
       }
       return prev;
@@ -36,7 +38,7 @@ const TechnicalSkills = () => {
       if (prev > 0) {
         return prev - 1;
       } else if (prev === 0) {
-        return 5;
+        return 7;
       }
       return prev;
     });
@@ -53,18 +55,24 @@ const TechnicalSkills = () => {
                   <Frontend />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 1 ? 'opacity-100' : 'opacity-0'}`}>
-                  <Backend />
+                  <Styling />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 2 ? 'opacity-100' : 'opacity-0'}`}>
-                  <Tools />
+                  <Backend />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 3 ? 'opacity-100' : 'opacity-0'}`}>
-                  <Testing />
+                  <Databases />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 4 ? 'opacity-100' : 'opacity-0'}`}>
-                  <CMS />
+                  <Tools />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 5 ? 'opacity-100' : 'opacity-0'}`}>
+                  <Testing />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 6 ? 'opacity-100' : 'opacity-0'}`}>
+                  <CMS />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 7 ? 'opacity-100' : 'opacity-0'}`}>
                   <StateManagment />
                 </div>
               </div>
@@ -87,7 +95,7 @@ const TechnicalSkills = () => {
                       skillIndex === 1 ? 'opacity-100' : ''
                     } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
                   >
-                    Backend
+                    Styling
                   </h2>
                 )}
                 {skillIndex === 2 && (
@@ -96,7 +104,7 @@ const TechnicalSkills = () => {
                       skillIndex === 2 ? 'opacity-100' : ''
                     } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
                   >
-                    Tools
+                    Backend
                   </h2>
                 )}
                 {skillIndex === 3 && (
@@ -105,7 +113,7 @@ const TechnicalSkills = () => {
                       skillIndex === 3 ? 'opacity-100' : ''
                     } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
                   >
-                    Testing
+                    Databases
                   </h2>
                 )}
                 {skillIndex === 4 && (
@@ -114,13 +122,31 @@ const TechnicalSkills = () => {
                       skillIndex === 4 ? 'opacity-100' : ''
                     } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
                   >
-                    CMS
+                    Tools
                   </h2>
                 )}
                 {skillIndex === 5 && (
                   <h2
                     className={`${
                       skillIndex === 5 ? 'opacity-100' : ''
+                    } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
+                  >
+                    Testing
+                  </h2>
+                )}
+                {skillIndex === 6 && (
+                  <h2
+                    className={`${
+                      skillIndex === 6 ? 'opacity-100' : ''
+                    } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
+                  >
+                    CMS
+                  </h2>
+                )}
+                {skillIndex === 7 && (
+                  <h2
+                    className={`${
+                      skillIndex === 7 ? 'opacity-100' : ''
                     } text-[1.25rem] sm:text-[1.5rem] text-blueColor`}
                   >
                     State
@@ -158,18 +184,24 @@ const TechnicalSkills = () => {
                   <Frontend />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 1 ? 'opacity-100' : 'opacity-0'}`}>
-                  <Backend />
+                  <Styling />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 2 ? 'opacity-100' : 'opacity-0'}`}>
-                  <Tools />
+                  <Backend />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 3 ? 'opacity-100' : 'opacity-0'}`}>
-                  <Testing />
+                  <Databases />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 4 ? 'opacity-100' : 'opacity-0'}`}>
-                  <CMS />
+                  <Tools />
                 </div>
                 <div className={`transition-opacity duration-300 ${skillIndex === 5 ? 'opacity-100' : 'opacity-0'}`}>
+                  <Testing />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 6 ? 'opacity-100' : 'opacity-0'}`}>
+                  <CMS />
+                </div>
+                <div className={`transition-opacity duration-300 ${skillIndex === 7 ? 'opacity-100' : 'opacity-0'}`}>
                   <StateManagment />
                 </div>
               </div>
@@ -181,19 +213,25 @@ const TechnicalSkills = () => {
                   <h2 className={`${skillIndex === 0 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Frontend</h2>
                 )}
                 {skillIndex === 1 && (
-                  <h2 className={`${skillIndex === 1 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Backend</h2>
+                  <h2 className={`${skillIndex === 1 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Styling</h2>
                 )}
                 {skillIndex === 2 && (
-                  <h2 className={`${skillIndex === 2 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Tools</h2>
+                  <h2 className={`${skillIndex === 2 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Backend</h2>
                 )}
                 {skillIndex === 3 && (
-                  <h2 className={`${skillIndex === 3 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Testing</h2>
+                  <h2 className={`${skillIndex === 3 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Databases</h2>
                 )}
                 {skillIndex === 4 && (
-                  <h2 className={`${skillIndex === 4 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>CMS</h2>
+                  <h2 className={`${skillIndex === 4 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Tools</h2>
                 )}
                 {skillIndex === 5 && (
-                  <h2 className={`${skillIndex === 5 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>State</h2>
+                  <h2 className={`${skillIndex === 5 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>Testing</h2>
+                )}
+                {skillIndex === 6 && (
+                  <h2 className={`${skillIndex === 6 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>CMS</h2>
+                )}
+                {skillIndex === 7 && (
+                  <h2 className={`${skillIndex === 7 ? 'opacity-100' : ''} text-[1.5rem] text-blueColor`}>State</h2>
                 )}
               </div>
 

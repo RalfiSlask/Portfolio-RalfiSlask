@@ -1,21 +1,13 @@
 import CsharpLogo from '../../../assets/icons/backend/csharp.png';
 import ExpressLogo from '../../../assets/icons/backend/express.svg';
-import MariaLogo from '../../../assets/icons/backend/mariadb.png';
-import MongoDBLogo from '../../../assets/icons/backend/mongodb.svg';
-import MySqlLogo from '../../../assets/icons/backend/mysql.svg';
+import LaravelLogo from '../../../assets/icons/backend/laravel.png';
 import NodeLogo from '../../../assets/icons/backend/nodejs.svg';
-import PostgreSQLLogo from '../../../assets/icons/backend/postgres.png';
+import PhpLogo from '../../../assets/icons/backend/php.png';
 import PythonLogo from '../../../assets/icons/backend/python.png';
+import NextLogo from '../../../assets/icons/nextjs.png';
+import TypescriptLogo from '../../../assets/icons/typescript.svg';
 
 const backendIcons = [
-  { name: 'MongoDB', logo: MongoDBLogo, className: 'absolute left-[0] top-10 translate-x-1/2 skills-icon-container' },
-  { name: 'MySQL', logo: MySqlLogo, className: 'absolute right-0 top-10 -translate-x-1/2 skills-icon-container' },
-  { name: 'MariaDB', logo: MariaLogo, className: 'absolute left-0 bottom-10 translate-x-1/2 skills-icon-container' },
-  {
-    name: 'PostgreSQL',
-    logo: PostgreSQLLogo,
-    className: 'absolute right-0 bottom-10 -translate-x-1/2 skills-icon-container',
-  },
   {
     name: 'C#',
     logo: CsharpLogo,
@@ -35,6 +27,26 @@ const backendIcons = [
     name: 'Express',
     logo: ExpressLogo,
     className: 'absolute top-1/2 -translate-y-1/2 left-0 -translate-x-1/2 skills-icon-container',
+  },
+  {
+    name: 'Laravel',
+    logo: LaravelLogo,
+    className: 'absolute left-[0] top-10 translate-x-1/2 skills-icon-container',
+  },
+  {
+    name: 'PHP',
+    logo: PhpLogo,
+    className: 'absolute right-0 top-10 -translate-x-1/2 skills-icon-container',
+  },
+  {
+    name: 'Next.js',
+    logo: NextLogo,
+    className: 'absolute left-0 bottom-10 translate-x-1/2 skills-icon-container',
+  },
+  {
+    name: 'TypeScript',
+    logo: TypescriptLogo,
+    className: 'absolute right-0 bottom-10 -translate-x-1/2 skills-icon-container',
   },
 ];
 
