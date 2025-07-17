@@ -3,7 +3,7 @@ import React from 'react';
 import SpotifyIcon from '../../../assets/icons/spotify.svg';
 
 const client_id = 'a628d6843b964ec3a71f2d06d3b71581';
-const redirect_uri = encodeURIComponent('https://ralfislask-portfolio-i3rvj.ondigitalocean.app/');
+const redirect_uri = encodeURIComponent('https://matthias-nilsson.se/');
 const scope = encodeURIComponent('streaming user-read-email user-read-private');
 const spotifyAuthUrl = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=${redirect_uri}&scope=${scope}`;
 
