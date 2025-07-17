@@ -3,13 +3,10 @@ import { ParallaxBanner } from 'react-scroll-parallax';
 import ArrowDownLogo from './assets/icons/arrowdown.svg';
 import Background from './assets/images/bg3.jpg';
 import Header from './components/Header';
-import LineDrawing from './components/LineDrawing';
 import ContactPage from './components/pages/contact/ContactPage';
 import BuiltWith from './components/pages/contact/ui/BuiltWith';
 import Copyright from './components/pages/contact/ui/Copyright';
-import Experience from './components/pages/experience/Experience';
 import LandingIntro from './components/pages/landing/LandingIntro';
-import SkillsPage from './components/pages/skills/SkillsPage';
 import { Context } from './context/Context';
 import LottieAnimation from './LottieAnimation';
 import SEO from './SEO';
@@ -18,6 +15,7 @@ const LazyLoadedAbout = React.lazy(() => import('./components/pages/about/AboutP
 const LazyLoadedExperience = React.lazy(() => import('./components/pages/experience/Experience'));
 const LazyLoadedLineDrawing = React.lazy(() => import('./components/LineDrawing'));
 const LazyLoadedProjects = React.lazy(() => import('./components/pages/projects/Projects'));
+const LazyLoadedSkillsPage = React.lazy(() => import('./components/pages/skills/SkillsPage'));
 
 function App() {
   const context = useContext(Context);
@@ -61,15 +59,15 @@ function App() {
         </Suspense>
 
         <section className="grid-fill-4812 flex justify-center gray-shiny w-screen h-[2000px] relative">
-          <LineDrawing />
-          <Experience />
+          <LazyLoadedLineDrawing />
+          <LazyLoadedExperience />
           {isScreenSizeMobile && (
             <div className="absolute w-[30px] h-[90%] top-0 shadow-shadow-path left-1/2 -translate-x-1/2 z-0"></div>
           )}
         </section>
 
         <section className="grid-fill-4812 px-4 sm:px-6 relative flex w-screen justify-center pt-10 sm:pt-20 xl:pt-40 pb-10 sm:pb-20 xl:pb-40 bg-gradient-to-r from-[#1a1a1a] to-[#171717]  ">
-          <SkillsPage />
+          <LazyLoadedSkillsPage />
         </section>
         <Suspense fallback={<div>Loading...</div>}>
           <section
