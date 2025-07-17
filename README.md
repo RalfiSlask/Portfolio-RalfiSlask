@@ -12,7 +12,7 @@
 
 ### Experience
 
-<img src="https://github.com/RalfiSlask/Portfolio-RalfiSlask/assets/112242026/24922976-a803-4938-8894-8d4d8e264ee5" width="400" height="300" alt="Experience">
+<img src="https://github.com/RalfiSlask/Portfolio-RalfiSlask/assets/112242026/24922976-a803-4938-8894-8d4d8e264ee5" width="400" height="305" alt="Experience">
 
 ### Technical Skills
 
