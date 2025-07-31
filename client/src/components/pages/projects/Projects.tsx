@@ -5,11 +5,11 @@ import { FadeInFromRight, FadeInFromRightDelayed, FadeInFromRightLast } from '..
 import PageDescription from '../shared/PageDescription';
 import AIDeepfakeDetection from './AIDeepfakeDetection';
 import BipolarCompassContainer from './BipolarCompassContainer';
-import DevlinksContainer from './DevlinksContainer';
+import CubeiaContainer from './CubeiaContainer';
 import FeedbackContainer from './FeedbackContainer';
+import Jumpyard from './Jumpyard';
 import KanbanContainer from './KanbanContainer';
-import MemoryContainer from './MemoryContainer';
-import SketchitContainer from './SketchitContainer';
+import NewSubway from './NewSubway';
 import WYSIWYGContainer from './WYSIWYGContainer';
 
 const Projects = () => {
@@ -59,18 +59,19 @@ const Projects = () => {
       </div>
 
       <div className="grid grid-cols-4 md:grid-cols-8 xl:grid-cols-12 gap-10 md:px-0">
-        <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10 xl:gap-16">
-          <div className="xl:max-h-[500px] col-span-4  md:col-span-8 grid gap-10 grid-cols-4 sm:grid-cols-4 md:grid-cols-8">
-            <AIDeepfakeDetection />
-            <FeedbackContainer />
+        <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10">
+          <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10">
+            <NewSubway />
+            {/*     <MemoryContainer /> */}
+            <Jumpyard />
           </div>
-          <MemoryContainer />
-          <SketchitContainer />
+          <AIDeepfakeDetection />
+          <CubeiaContainer />
         </div>
-        <div className="col-span-4 md:col-span-8 xl:col-span-4 grid-cols-4 md:grid-cols-8">
-          <div className="grid gap-10 xl:gap-16 w-full col-span-4 md:col-span-8  xl:col-span-4 grid-cols-4 md:grid-cols-8 xl:grid-cols-4">
+        <div className="col-span-4 md:col-span-8 xl:col-span-4">
+          <div className="grid gap-10 w-full">
             <KanbanContainer />
-            <DevlinksContainer />
+            <FeedbackContainer />
             <WYSIWYGContainer />
           </div>
         </div>

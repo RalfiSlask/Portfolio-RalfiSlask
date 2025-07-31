@@ -1,7 +1,7 @@
-import MemoryImg from '../../../assets/images/memory.webp';
-import SkillsButtons from './SkillsButtons';
-import ProjectInfoContainer from './ProjectInfoContainer';
 import { motion, Variants } from 'framer-motion';
+import MemoryImg from '../../../assets/images/memory.webp';
+import ProjectInfoContainer from './ProjectInfoContainer';
+import SkillsButtons from './SkillsButtons';
 
 const MemoryContainer = () => {
   const projectVariant: Variants = {
@@ -22,7 +22,7 @@ const MemoryContainer = () => {
     },
   };
 
-  const skills = ['React', 'Typescript', 'Tailwind'];
+  const skills = ['React', 'Typescript', 'Tailwind', 'JavaScript'];
   const projectInfo = {
     title: 'Memory Game',
     description:
@@ -33,24 +33,24 @@ const MemoryContainer = () => {
     <a
       href="https://ralfislask.github.io/Memory-Game/"
       target="_blank"
-      className="w-full col-span-4 md:col-start-2 md:col-end-8 xl:col-span-8"
+      className="w-full col-span-4 md:col-span-4 xl:col-span-4 h-full"
     >
       <motion.div
         initial="offscreen"
         whileInView={'onscreen'}
-        className="w-full col-span-4 md:col-start-2 md:col-end-8 xl:col-span-8"
+        className="w-full h-full"
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
         <motion.div variants={projectVariant}>
-          <div className="bg-primaryBG p-4 sm:p-10 xl:max-h-[800px] shadow-shadow-medium w-full group rounded-[25px] cursor-pointer flex flex-col gap-6">
-            <div className="relative overflow-hidden rounded-xl w-full xl:w-[700px] xl:h-[500px]">
+          <div className="bg-primaryBG p-4 sm:p-10 shadow-shadow-medium max-h-[550px] w-full h-full group rounded-[25px] cursor-pointer flex flex-col gap-6">
+            <div className="relative overflow-hidden rounded-xl min-h-[180px]">
               <img
                 src={MemoryImg}
                 alt="memory"
                 width="500"
                 height="500"
-                className="transition-transform duration-300 w-full h-full object-cover transform group-hover:scale-[110%]"
+                className="transition-transform duration-300 w-full object-cover transform group-hover:scale-[110%]"
                 loading="lazy"
               />
             </div>

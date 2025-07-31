@@ -1,9 +1,11 @@
 import { motion, Variants } from 'framer-motion';
-import KanbanImg from '../../../assets/images/kanban.webp';
+import JumpyardImg from '../../../assets/images/jumpyard.webp';
 import ProjectInfoContainer from './ProjectInfoContainer';
 import SkillsButtons from './SkillsButtons';
 
-const KanbanContainer = () => {
+const Jumpyard = () => {
+  const skills = ['CMS', 'PHP', 'Alpine', 'Tailwind', 'MultiSite'];
+
   const projectVariant: Variants = {
     offscreen: {
       y: 150,
@@ -17,43 +19,40 @@ const KanbanContainer = () => {
         type: 'spring',
         bounce: 0,
         duration: 1,
+        delay: 0.2,
       },
     },
   };
 
-  const skills = ['React', 'Tailwind', 'JavaScript', 'CSS'];
   const projectInfo = {
-    title: 'Kanban',
+    title: 'JumpYard',
     description:
-      'Task management application that visualizes tasks to improve workflow and productivity. The user can add, edit and delete tasks.',
+      'JumpYard is a Swedish trampoline and activity park chain offering fun and safe experiences for all ages. Is available in multiple languages.',
   };
 
   return (
-    <a
-      href="https://ralfislask.github.io/Kanban/"
-      target="_blank"
-      className="w-full col-span-4 md:col-span-4 xl:col-span-4 h-full"
-    >
+    <a href="https://www.jumpyard.se/" target="_blank" className="w-full col-span-4 md:col-span-4 xl:col-span-4 h-full">
       <motion.div
         initial="offscreen"
         whileInView={'onscreen'}
-        className="w-full h-full"
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
+        className="h-full"
       >
         <motion.div variants={projectVariant}>
           <div className="bg-primaryBG p-4 sm:p-10 shadow-shadow-medium max-h-[550px] w-full h-full group rounded-[25px] cursor-pointer flex flex-col gap-6">
             <div className="relative overflow-hidden rounded-xl w-full min-h-[180px]">
               <img
-                src={KanbanImg}
-                alt="memory"
+                src={JumpyardImg}
+                alt="jumpyard"
                 width="500"
                 height="500"
-                className="transition-transform duration-300 h-full w-full object-cover transform group-hover:scale-[110%]"
+                className="transition-transform duration-300 w-full h-full object-cover transform group-hover:scale-[110%] group:hover-opacity"
                 loading="lazy"
               />
             </div>
             <ProjectInfoContainer projectInfo={projectInfo} />
+
             <SkillsButtons skills={skills} />
           </div>
         </motion.div>
@@ -62,4 +61,4 @@ const KanbanContainer = () => {
   );
 };
 
-export default KanbanContainer;
+export default Jumpyard;
