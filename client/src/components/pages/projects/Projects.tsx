@@ -8,7 +8,7 @@ import BipolarCompassContainer from './BipolarCompassContainer';
 import CubeiaContainer from './CubeiaContainer';
 import FeedbackContainer from './FeedbackContainer';
 import Jumpyard from './Jumpyard';
-import KanbanContainer from './KanbanContainer';
+import MemoryContainer from './MemoryContainer';
 import NewSubway from './NewSubway';
 import WYSIWYGContainer from './WYSIWYGContainer';
 
@@ -62,7 +62,6 @@ const Projects = () => {
         <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10">
           <div className="col-span-4 md:col-span-8 grid grid-cols-4 md:grid-cols-8 gap-10">
             <NewSubway />
-            {/*     <MemoryContainer /> */}
             <Jumpyard />
           </div>
           <AIDeepfakeDetection />
@@ -70,7 +69,7 @@ const Projects = () => {
         </div>
         <div className="col-span-4 md:col-span-8 xl:col-span-4">
           <div className="grid gap-10 w-full">
-            <KanbanContainer />
+            <MemoryContainer />
             <FeedbackContainer />
             <WYSIWYGContainer />
           </div>
