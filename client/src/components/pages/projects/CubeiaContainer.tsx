@@ -9,7 +9,7 @@ const CubeiaContainer = () => {
   const projectInfo = {
     title: 'Cubeia Poker',
     description:
-      'Poker application that is sold to providers that so that they can offer poker to their customers. Offers cash games, tournaments and sit and go games in multiple languages.',
+      'Poker application that is sold to providers so that they can offer poker to their customers. Includes cash games, tournaments and sit and go games in multiple languages.',
   };
 
   return (
